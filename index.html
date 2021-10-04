@@ -5,27 +5,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="./style.css">
   <title>Frontend Mentor | GitHub user search app</title>
 </head>
 <body>
+  <!-- header navigation for devfinder and dark light icon -->
   <header class="main-head">
-    <h1>devfinder</h1>
-    <ul>
-      <li>DARK</li>
-      <li><link rel="shortcut icon" type="image/moon-icon" href="./assets/icon-moon.svg"></li>
-    </ul>
+    <nav>
+      <ul>
+          <li>devfinder</li>
+          <li>
+              <a href="_blank">Dark <img src="./assets/icon-moon.svg" class="dark-icon" alt="change-web-theme-to-dark"></a>
+          </li>
+      </ul>
+  </nav>
   </header>
-  <main>
-    <section class="hero">
-      <div class="search-bar">
-        <img src="./assets/icon-search.svg" alt="search-icon">
-        <input type="text" placeholder="Search GitHub username...">
-        <button type="button">Search</button>
-      </div>
-    </section>
-    <section class="octocat-body"></section>
-  </main>
-  <script src="app.js"></script>
+  <main class="container">
+    <form id="myForm" autocomplete="off">
+        <div class="form-group">
+            <img src="./assets/icon-search.svg" alt="search-icon">
+            <input type="text" class="form-control" id="search" placeholder="Search Github username..." required>
+            <label for="search-status-of-user">No results</label>
+            <button class="form-group__searchBtn">
+                Search User
+            </button>
+        </div>
+        <section class="info__container">
+            <div class="info__profilePicture">
+              
+            </div>
+            <section id="info__result">
+                <div class="info__title">
+                    <h2></h2>
+                    <h3></h3>    
+                </div>
+                <div class="info__username">
+                    <a href="_blank"></a>
+                </div>
+                <section class="info__user">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum iure odit maxime id eaque labore exercitationem libero vero accusantium
+                        eum asperiores est reiciendis aspernatur adipisci, ea, voluptatibus consequuntur
+                        nobis ut?
+                    </p>
+                    <div class="info__stats">
+                        <span>Repos <br> 8 </span>
+                        <span>Followers <br> 3938 </span>
+                        <span>Following <br> 9 </span>
+                    </div>
+                </section>
+                <section class="info__location">
+                    <span>
+                        <img src="" alt="">
+                        San Francisco
+                    </span>
+                    <span>
+                        <img src="" alt="">
+                        Not Available
+                    </span>
+                    <span>
+                        <img src="" alt="">
+                        <a href="_blank">https://github.blog</a>
+                    </span>
+                    <span>
+                        <img src="" alt="">
+                        @github
+                    </span>
+                </section>
+            </section>
+        </section>
+    </form>
+</main>
+<script src="app.js"></script>
 </body>
 </html>
