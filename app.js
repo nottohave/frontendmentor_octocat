@@ -1,28 +1,22 @@
-// practice fetch function
+var form = document.getElementById("myForm");
+var profilePicture = document.querySelector(".info__profilePicture");
 
-// fetch('https://api.github.com/user', {
-//     method: 'POST',
-//     headers: {
-//         'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify({
-//         name: 'octocat'
-//     })
-// }).then(res => {
-//     return res.json()
-//     })
-//     .then(data => console.log(data))
-//     .catch(error => console.log('ERROR'))
+form.addEventListener("submit", function(e){
+    e.preventDefault();
 
-// practice callback and learning promise
-console.log("Start");
+    var search = document.getElementById("search").value;
+    var originalName = search.split(" ").join("");
 
-function loginUser(email, password) {
-    setTimeout(() => {
-        console.log("We have the data.");
-        return({ userEmail: email });
-    }, 3000);
-}
 
-const user = loginUser('something@gmail.com', '123456')
-console.log("Finish");
+    fetch("https://api.github.com/users/" + originalName)
+    .then((result) => result.json())
+    .then((data) => {
+        console.log(data);
+
+        profilePicture.innerHTML = 
+        `
+            <a target="_blank" href="https://www.github.com/${originalName}"> <img src="${data.avatar_url}"/>
+        `
+    })
+
+})
