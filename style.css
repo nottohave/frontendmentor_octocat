@@ -3,9 +3,59 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/*import fonts */
+@font-face {
+    font-family: "Octocat Bold";
+    src: url(./fonts/SpaceMono-Bold.ttf)
+}
+
+@font-face {
+    font-family: "Octocat Reg";
+    src: url(./fonts/SpaceMono-Regular.ttf);
+}
+
+body {
+    height: 100vh;
+    background: #f6f8ff;
+}
+
+/* header style starts here */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+nav {
+    
+}
+
+.logo {
+    font-family: "Octocat Bold";
+    font-size: 26px;
+    line-height: 38px;
+    color: #2b3442;
+}
+
+ul {
+    list-style: none;
+}
+
+ul a {
+    text-decoration: none;
+    font-family: "Octocat Bold";
+    color: #697c9a;
+    font-size: 22px;
+    line-height: 38px;
+    word-spacing: 5px;
+    letter-spacing: 2px;
+}
+
 .dark-icon {
-    height: 50px;
-    width: 50px;
+    height: 23px;
+    width: 23px;
 }
 .form-group {
     width: 40%;
