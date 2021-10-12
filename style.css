@@ -97,8 +97,48 @@ ul a {
 }
 
 .search-status-label {
-    /* visibility: hidden; */
     display: none;
 }
 
+.info__container {
+    margin: 1em;
+    padding: 2em 1em;
+    /* border: solid 2px black; */
+    border-radius: 1em;
+    background: #fefefe;
+}
+
+.info__profilePicture {
+    display: flex;
+    /* border: solid 2px green; */
+}
+
+.info__profilePicture img {
+    width: 4.5em;
+    height: 4.5em;
+    border-radius: 50%;
+}
+
+.info__title {
+    padding-left: 1em;
+    width: 100%;
+}
+
+.info__title h2 {
+    font-family: "Octocat Bold";
+    font-size: 1.625em;
+    line-height: 1.1em;
+}
+
+.info__title a {
+    text-decoration: none;
+    font-family: "Octocat Reg";
+    font-size: 0.8em;
+}
+
+.info__title p {
+    font-family: "Octocat Reg";
+    font-size: 0.75em;
+    line-height: 1.8em;
+}
 
