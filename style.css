@@ -57,7 +57,7 @@ ul a {
     width: 23px;
 }
 
-/* Search form box style starts here */
+/* SEARCH FORM BOX style starts here */
 .form-group {
     width: 92%;
     border: none;
@@ -103,14 +103,13 @@ ul a {
 .info__container {
     margin: 1em;
     padding: 2em 1em;
-    /* border: solid 2px black; */
     border-radius: 1em;
     background: #fefefe;
 }
 
+/* USER PROFILE HEADER */
 .info__profilePicture {
     display: flex;
-    /* border: solid 2px green; */
 }
 
 .info__profilePicture img {
@@ -142,3 +141,33 @@ ul a {
     line-height: 1.8em;
 }
 
+/* USER BODY DESCRIPTION  */
+.info__result {
+    width: 100%;
+    display: flex;
+}
+
+.info__user p {
+    font-family: "Octocat Reg";
+    font-size: 0.9em;
+    line-height: 1.5625em;
+    padding: 2.125em 0em;
+}
+
+/* USER STATS */
+.info__stats {
+    background: #f6f8ff;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 1em;
+    padding: 1.2em 2em;
+    text-align: center;
+    line-height: 2em;
+    font-family: "Octocat Bold";
+    font-size: 1em;
+}
+
+.info__stats span::first-line {
+    font-family: "Octocat Reg";
+    font-size: 0.85em;
+}
