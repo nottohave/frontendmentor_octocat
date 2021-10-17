@@ -202,6 +202,10 @@ ul a {
     padding-right: 15px !important;
 }
 
+.twitter img {
+    opacity: 0.5;
+
+}
 
 .info__location span a {
     text-decoration: none;
