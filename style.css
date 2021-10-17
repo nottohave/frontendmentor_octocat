@@ -46,7 +46,7 @@ ul a {
     text-decoration: none;
     font-family: "Octocat Bold";
     color: #697c9a;
-    font-size: 22px;
+    font-size: 0.9em;
     line-height: 38px;
     word-spacing: 5px;
     letter-spacing: 2px;
@@ -139,6 +139,7 @@ ul a {
     font-family: "Octocat Reg";
     font-size: 0.75em;
     line-height: 1.8em;
+    color: #697c9a;
 }
 
 /* USER BODY DESCRIPTION  */
@@ -152,6 +153,7 @@ ul a {
     font-size: 0.9em;
     line-height: 1.5625em;
     padding: 2.125em 0em;
+    color: #697c9a;
 }
 
 /* USER STATS */
@@ -170,4 +172,42 @@ ul a {
 .info__stats span::first-line {
     font-family: "Octocat Reg";
     font-size: 0.85em;
+    color: #697c9a;
+}
+
+.info__location {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em 0em;
+    font-family: "Octocat Reg";
+    font-size: 0.9em;
+    line-height: 0.9em;
+    color: #697c9a;
+}
+
+.info__location span {
+    padding: 0.5em 0em;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.info__location span img {
+    padding-right: 10px;
+}
+
+.location img {
+    padding-right: 15px !important;
+}
+
+
+.info__location span a {
+    text-decoration: none;
+    color: #697c9a;
+}
+
+.twitter {
+    color: hsl(217, 20%, 71%);
 }
