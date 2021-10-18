@@ -27,7 +27,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    padding: 1em;
+    padding: 2em 1em;
 }
 
 
@@ -36,6 +36,7 @@ header {
     font-size: 26px;
     line-height: 38px;
     color: #2b3442;
+    font-weight: 500;
 }
 
 ul {
@@ -43,6 +44,10 @@ ul {
 }
 
 ul a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5.25em;
     text-decoration: none;
     font-family: "Octocat Bold";
     color: #697c9a;
@@ -52,17 +57,18 @@ ul a {
     letter-spacing: 2px;
 }
 
+
 .dark-icon {
+    margin-left: 1em;
     height: 23px;
     width: 23px;
 }
 
 /* SEARCH FORM BOX style starts here */
 .form-group {
-    width: 92%;
     border: none;
-    border-radius: 1em;
-    padding: .5em;
+    border-radius: 0.8em;
+    padding: .5em 0.5em 0.5em 1em;
     margin: 0em 1em;
     background: #fefefe;
     display: grid;
@@ -86,14 +92,17 @@ ul a {
 }
 
 .form-group__searchBtn {
+    width: 84px;
+    height: 46px;
+    
     cursor: pointer;
     background: #0079ff;
     border: none;
-    border-radius: 1em;
+    border-radius: 0.6em;
     font-family: "Octocat Bold";
     color: #fefefe;
-    width: 7em;
-    height: 4em;
+    font-size: 0.9em;
+    font-weight: 500;
 }
 
 .search-status-label {
@@ -162,7 +171,7 @@ ul a {
     display: flex;
     justify-content: space-between;
     border-radius: 1em;
-    padding: 1.2em 2em;
+    padding: 1em 2em;
     text-align: center;
     line-height: 2em;
     font-family: "Octocat Bold";
@@ -195,11 +204,11 @@ ul a {
 
 
 .info__location span img {
-    padding-right: 10px;
+    padding-right: 1.12em;
 }
 
 .location img {
-    padding-right: 15px !important;
+    padding-right: 1.43em !important;
 }
 
 .twitter img {
