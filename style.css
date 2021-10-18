@@ -75,6 +75,7 @@ ul a {
     grid-template-columns: 0.2fr 1.5fr 0.5fr;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 5px 15px hsl(217, 20%, 81%);
 }
 .form-control {
     border: none;
@@ -114,6 +115,8 @@ ul a {
     padding: 2em 1em;
     border-radius: 1em;
     background: #fefefe;
+    box-shadow: 0px 5px 15px hsl(217, 20%, 81%);
+
 }
 
 /* USER PROFILE HEADER */
