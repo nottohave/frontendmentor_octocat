@@ -16,7 +16,7 @@
 }
 
 body {
-    height: 100vh;
+    height: 90vh;
     background: #f6f8ff;
 }
 
@@ -80,9 +80,8 @@ ul a {
 .form-control {
     border: none;
     font-family: "Octocat Reg";
-    font-size: calc(0.8125em + 0.5vw);
+    font-size: 0.8125em;
     line-height: 1.25em;
-    
 }
 
 .form-control:hover {
@@ -101,7 +100,7 @@ ul a {
     border-radius: 0.6em;
     font-family: "Octocat Bold";
     color: #fefefe;
-    font-size: calc(0.9em + 0.5vw);
+    font-size: 0.9em;
     font-weight: 500;
 }
 
@@ -130,6 +129,9 @@ ul a {
 }
 
 .info__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding-left: 1em;
     width: 100%;
 }
@@ -137,13 +139,15 @@ ul a {
 .info__title h2 {
     font-family: "Octocat Bold";
     font-size: 1.625em;
-    line-height: 1.1em;
+    line-height: 1.2em;
+    font-weight: 500;
 }
 
 .info__title a {
     text-decoration: none;
     font-family: "Octocat Reg";
     font-size: 0.8em;
+    color: #0079ff;
 }
 
 .info__title p {
@@ -162,7 +166,7 @@ ul a {
 .info__user p {
     font-family: "Octocat Reg";
     font-size: 0.9em;
-    line-height: 1.5625em;
+    line-height: 1.8em;
     padding: 2.125em 0em;
     color: #697c9a;
 }
@@ -186,6 +190,7 @@ ul a {
     color: #697c9a;
 }
 
+/* USER LOCATION */
 .info__location {
     display: flex;
     flex-direction: column;
@@ -227,7 +232,7 @@ ul a {
     color: hsl(217, 20%, 71%);
 }
 
-/* Tablet size */
+/* Tablet size 768 x 1024 */
 @media screen and (min-width: 768px) {
     /* center */
     body {
@@ -248,8 +253,50 @@ ul a {
         padding-right: 0.6em;
         grid-template-columns: 0.2fr 1.5fr 0.1fr;
     }
+    .form-control {
+        font-size: calc(0.8125em + 0.5vw);
+        line-height: 1.25em;    
+    }
     .form-group__searchBtn {
         width: 6.56em;
         height: 3.06em;
+        font-size: calc(0.9em + 0.5vw);
+    }
+
+    /* body information picture and title */
+    .info__container {
+        padding: 2em;
+    }
+    .info__profilePicture img {
+        width: 7.125em;
+        height: 7.4375em;
+    }
+    .info__title h2 {
+        font-weight: 500;
+    }
+    .info__title a {
+        font-size: 1.125em;
+    }
+    .info__container p {
+        font-size: 0.9em;
+        line-height: 1.5em;
+    }
+    /* User stats */
+    .info__stats {
+        text-align: left;
+        line-height: 1.3em;
+        padding: 0.4em 1.5em;
+        font-size: 1.5em;
+    }
+    .info__stats span::first-line {
+        font-size: 0.5em;
+    }
+    /* User location */
+    .info__location {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 120px;
+        width: 100%;
     }
 }
