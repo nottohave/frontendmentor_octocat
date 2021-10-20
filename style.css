@@ -80,8 +80,8 @@ ul a {
 .form-control {
     border: none;
     font-family: "Octocat Reg";
-    font-size: 13px;
-    line-height: 20px;
+    font-size: calc(0.8125em + 0.5vw);
+    line-height: 1.25em;
     
 }
 
@@ -93,16 +93,15 @@ ul a {
 }
 
 .form-group__searchBtn {
-    width: 84px;
-    height: 46px;
-    
+    width: 5.25em;
+    height: 2.875em;
     cursor: pointer;
     background: #0079ff;
     border: none;
     border-radius: 0.6em;
     font-family: "Octocat Bold";
     color: #fefefe;
-    font-size: 0.9em;
+    font-size: calc(0.9em + 0.5vw);
     font-weight: 500;
 }
 
@@ -226,4 +225,31 @@ ul a {
 
 .twitter {
     color: hsl(217, 20%, 71%);
+}
+
+/* Tablet size */
+@media screen and (min-width: 768px) {
+    /* center */
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    /* header */
+    .main-head {
+        max-width: 35.125em;
+    }
+    .container {
+        max-width: 35.125em;
+        max-height: 37.75em;
+    }
+    .form-group {
+        padding-right: 0.6em;
+        grid-template-columns: 0.2fr 1.5fr 0.1fr;
+    }
+    .form-group__searchBtn {
+        width: 6.56em;
+        height: 3.06em;
+    }
 }
