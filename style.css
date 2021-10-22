@@ -114,7 +114,6 @@ ul a {
     border-radius: 1em;
     background: #fefefe;
     box-shadow: 0px 5px 15px hsl(217, 20%, 81%);
-
 }
 
 /* USER PROFILE HEADER */
@@ -245,6 +244,7 @@ ul a {
     .main-head {
         max-width: 35.125em;
     }
+    /* body */
     .container {
         max-width: 35.125em;
         max-height: 37.75em;
@@ -298,5 +298,44 @@ ul a {
         flex-wrap: wrap;
         height: 120px;
         width: 100%;
+    }
+}
+
+/* Desktop size 1440 x 900 */
+@media screen and (min-width: 1440px) {
+    /* header */
+    .main-head {
+        max-width: 46.25em;
+    }
+    /* body */
+    .container {
+        max-width: 46.25em;
+        max-height: 32.2em;
+    }
+
+    /* Octocat profile picture */
+    .info__container {
+        display: flex;
+        flex-direction: row;
+    }
+    .octocat-picture {
+        padding-right: 30px;
+    }
+    .octocat-picture img {
+        width: 7.4em;
+        height: 7.4em;
+        border-radius: 50%;
+    }
+
+    .info__profilePicture img {
+        display: none;
+    }
+    .info__title {
+        padding-left: 0em;
+        flex-wrap: wrap;
+        height: 60px;
+    }
+    .info__title p {
+        font-size: 1.1em;
     }
 }
