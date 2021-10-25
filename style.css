@@ -117,6 +117,10 @@ ul a {
 }
 
 /* USER PROFILE HEADER */
+.octocat-picture {
+    display: none;
+}
+
 .info__profilePicture {
     display: flex;
 }
@@ -310,7 +314,6 @@ ul a {
     /* body */
     .container {
         max-width: 46.25em;
-        max-height: 32.2em;
     }
 
     /* Octocat profile picture */
@@ -319,6 +322,7 @@ ul a {
         flex-direction: row;
     }
     .octocat-picture {
+        display: unset;
         padding-right: 30px;
     }
     .octocat-picture img {
@@ -326,7 +330,6 @@ ul a {
         height: 7.4em;
         border-radius: 50%;
     }
-
     .info__profilePicture img {
         display: none;
     }
@@ -337,5 +340,8 @@ ul a {
     }
     .info__title p {
         font-size: 1.1em;
+        height: 50px;
+        display: inline-flex;
+        justify-content: flex-end;
     }
 }
