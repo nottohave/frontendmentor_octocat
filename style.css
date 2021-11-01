@@ -149,7 +149,7 @@ ul a {
     display: flex;
 }
 
-.info__profilePicture img {
+.info__ProfilePic img {
     width: 4.5em;
     height: 4.5em;
     border-radius: 50%;
@@ -302,7 +302,7 @@ ul a {
     .info__container {
         padding: 2em;
     }
-    .info__profilePicture img {
+    .info__ProfilePic img {
         width: 7.125em;
         height: 7.4375em;
     }
@@ -361,7 +361,7 @@ ul a {
         height: 7.4em;
         border-radius: 50%;
     }
-    .info__profilePicture img {
+    .info__ProfilePic img {
         display: none;
     }
     .info__title {
