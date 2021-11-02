@@ -18,7 +18,11 @@ form.addEventListener("submit", function(e){
         `
             <a target="_blank" href="https://www.github.com/${originalName}"> <img src="${data.avatar_url}"/>
         `;
-        infoTitleH2.innerHTML = `<h2>${data.login}</h2>`
+        infoTitleH2.innerHTML = 
+        `<h2>${data.name}</h2>` +
+        `<a href="#">@${data.login}</a>` +
+        `<p>Joined</p>`;
+        
     })
 
 })
