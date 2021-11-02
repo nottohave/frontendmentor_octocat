@@ -7,6 +7,9 @@ var infoTitleH2 = document.querySelector(".info__title");
 // user paragraph
 var infoUser = document.querySelector(".info__user");
 
+// user stats
+var infoStats = document.querySelector(".info__stats");
+
 form.addEventListener("submit", function(e){
     e.preventDefault();
 
@@ -38,6 +41,14 @@ form.addEventListener("submit", function(e){
         } else {
             infoUser.innherHTML = `<p>${data.bio}</p>`
         }
+
+        // User repos, followers & following statistic
+        infoStats.innerHTML = 
+        `<span>Repos <br>${data.public_repos}</span>` +
+        `<span>Followers <br>${data.followers}</span>` +
+        `<span>Following <br>${data.following}</span>`;
+
+
     })
 
 })
