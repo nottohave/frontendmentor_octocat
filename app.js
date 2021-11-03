@@ -10,12 +10,18 @@ var infoUser = document.querySelector(".info__user");
 // user stats
 var infoStats = document.querySelector(".info__stats");
 
+// user location, website link, twitter, company
+var userLo = document.querySelector(".location-name");
+var webLi = document.querySelector(".website-name");
+var twit = document.querySelector(".twitter-link");
+var comp = document.querySelector(".company-name");
+
+
 form.addEventListener("submit", function(e){
     e.preventDefault();
 
     var search = document.getElementById("search").value;
     var originalName = search.split(" ").join("");
-
 
     fetch("https://api.github.com/users/" + originalName)
     .then((result) => result.json())
@@ -32,7 +38,7 @@ form.addEventListener("submit", function(e){
         `;
         infoTitleH2.innerHTML = 
         `<h2>${data.name}</h2>` +
-        `<a href="#">@${data.login}</a>` +
+        `<a href="#">@${(data.login).toLowerCase()}</a>` +
         `<p>Joined  `  + dt + `</p>`;
         
         // User information description
@@ -48,6 +54,11 @@ form.addEventListener("submit", function(e){
         `<span>Followers <br>${data.followers}</span>` +
         `<span>Following <br>${data.following}</span>`;
 
+        // user location, website link, twitter, company
+        userLo.innerHTML = `${data.location}`;
+        webLi.innerHTML = `${data.blog}`;
+        twit.innerHTML = `${data.twitter_username}`;
+        comp.innerHTML = `${data.company}`;
 
     })
 
