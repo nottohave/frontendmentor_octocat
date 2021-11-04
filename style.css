@@ -128,6 +128,10 @@ ul a {
     font-weight: 500;
 }
 
+.form-group__searchBtn:hover {
+    opacity: 0.5;
+}
+
 .search-status-label {
     display: none;
 }
@@ -259,6 +263,11 @@ ul a {
 .info__location span a {
     text-decoration: none;
     color: #2B3442;
+}
+
+.info__location span a, .website-name:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .twitter {
