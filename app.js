@@ -55,10 +55,40 @@ form.addEventListener("submit", function(e){
         `<span>Following <br>${data.following}</span>`;
 
         // user location, website link, twitter, company
-        userLo.innerHTML = `${data.location}`;
-        webLi.innerHTML = `${data.blog}`;
-        twit.innerHTML = `${data.twitter_username}`;
-        comp.innerHTML = `${data.company}`;
+        if (data.location == null) {
+            userLo.innerHTML = `Not Available`;
+            userLo.setAttribute("style", "opacity: 0.5");
+        } else {
+            userLo.innerHTML = `${data.location}`;
+            userLo.removeAttribute("style", "opacity");
+        };
+        
+        if (data.blog === "") {
+            webLi.innerHTML = `Not Available`;
+            webLi.removeAttribute("style", "opacity");
+            webLi.setAttribute("style", "opacity: 0.5");
+        } else {
+            webLi.innerHTML = `${data.blog}`;
+            webLi.removeAttribute("style", "opacity");
+        };
+        
+        if (data.twitter_username == null) {
+            twit.innerHTML = `Not Available`;
+            twit.setAttribute("style", "opacity:0.5");
+        } else {
+            twit.innerHTML = `${data.twitter_username}`;
+            twit.removeAttribute("style", "opacity");
+
+        }
+
+        if (data.company == null) {
+            comp.innerHTML = `Not Availabe`;
+            comp.setAttribute("style", "opacity: 0.5");
+        } else {
+            comp.innerHTML = `${data.company}`;
+            comp.removeAttribute("style", "opacity");
+
+        }
 
     })
 
