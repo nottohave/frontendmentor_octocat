@@ -1,3 +1,4 @@
+// get input from search box
 var form = document.getElementById("myForm");
 
 // user profile picture and title
@@ -10,11 +11,17 @@ var infoUser = document.querySelector(".info__user");
 // user stats
 var infoStats = document.querySelector(".info__stats");
 
-// user location, website link, twitter, company
-var userLo = document.querySelector(".location-name");
-var webLi = document.querySelector(".website-name");
-var twit = document.querySelector(".twitter-link");
-var comp = document.querySelector(".company-name");
+// user box of location, web link, twitter, company
+var userLocation = document.querySelector(".location");
+var webLink = document.querySelector(".website");
+var twitter = document.querySelector(".twitter");
+var company = document.querySelector(".company");
+
+// user text of location, website link, twitter, company
+var userLoTxt = document.querySelector(".location-name");
+var webLiTxt = document.querySelector(".website-name");
+var twitTxt = document.querySelector(".twitter-link");
+var compTxt = document.querySelector(".company-name");
 
 
 form.addEventListener("submit", function(e){
@@ -27,12 +34,6 @@ form.addEventListener("submit", function(e){
     .then((result) => result.json())
     .then((data) => {
         console.log(data);
-
-        userLo.removeAttribute("style", "opacity");
-        webLi.removeAttribute("style", "opacity");
-        twit.removeAttribute("style", "opacity");
-        comp.removeAttribute("style", "opacity");
-
 
         // Date format
         let dt = new Date(data.created_at).toLocaleDateString(undefined,{dateStyle:'medium'});
@@ -61,37 +62,38 @@ form.addEventListener("submit", function(e){
         `<span>Following <br>${data.following}</span>`;
 
         // user location, website link, twitter, company
+        // if the information is null or "", display NA, grey out the area
+        // if user has the information for the above, display the information with a different text color
         if (data.location == null) {
-            userLo.innerHTML = `Not Available`;
-            userLo.setAttribute("style", "opacity: 0.5");
+            userLoTxt.innerHTML = `Not Available`;
+            userLocation.setAttribute("style", "opacity: 0.5");
         } else {
-            userLo.innerHTML = `${data.location}`;
-            userLo.removeAttribute("style", "opacity");
+            userLoTxt.innerHTML = `${data.location}`;
+            userLocation.removeAttribute("style", "opacity");
         };
         
         if (data.blog == "") {
-            webLi.innerHTML = `Not Available`;
-            webLi.setAttribute("style", "opacity: 0.5");
+            webLiTxt.innerHTML = `Not Available`;
+            webLink.setAttribute("style", "opacity: 0.5");
         } else {
-            webLi.innerHTML = `<a href="_blank">${data.blog}</a>`;
-            webLi.removeAttribute("style", "opacity");
+            webLiTxt.innerHTML = `<a href="_blank">${data.blog}</a>`;
+            webLink.removeAttribute("style", "opacity");
         };
         
         if (data.twitter_username == null) {
-            twit.innerHTML = `Not Available`;
-            twit.setAttribute("style", "opacity:0.5");
+            twitTxt.innerHTML = `Not Available`;
+            twitter.setAttribute("style", "opacity:0.5");
         } else {
-            twit.removeAttribute("style", "opacity");
-            twit.innerHTML = `${data.twitter_username}`;
+            twitTxt.innerHTML = `${data.twitter_username}`;
+            twitter.removeAttribute("style", "opacity");
         }
 
         if (data.company == null) {
-            comp.innerHTML = `Not Availabe`;
-            comp.setAttribute("style", "opacity: 0.5");
+            compTxt.innerHTML = `Not Availabe`;
+            company.setAttribute("style", "opacity: 0.5");
         } else {
-            comp.innerHTML = `${data.company}`;
-            comp.removeAttribute("style", "opacity");
-
+            compTxt.innerHTML = `${data.company}`;
+            company.removeAttribute("style", "opacity");
         }
 
     })
