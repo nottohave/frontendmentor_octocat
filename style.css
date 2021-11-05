@@ -243,7 +243,6 @@ ul a {
     color: #2B3442;
 }
 
-
 .info__location span img {
     padding-right: 1.12em;
 }
@@ -261,7 +260,7 @@ ul a {
 }
 
 .info__location span a {
-    text-decoration: none;
+    text-decoration: none !important;
     color: #2B3442;
 }
 

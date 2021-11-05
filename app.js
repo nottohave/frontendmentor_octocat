@@ -42,7 +42,7 @@ form.addEventListener("submit", function(e){
         `<p>Joined  `  + dt + `</p>`;
         
         // User information description
-        if (data.bio == null) {
+        if (data.bio === null) {
             infoUser.innerHTML = `<p>This profile has no bio</p>`
         } else {
             infoUser.innherHTML = `<p>${data.bio}</p>`
@@ -63,7 +63,7 @@ form.addEventListener("submit", function(e){
             userLo.removeAttribute("style", "opacity");
         };
         
-        if (data.blog === "") {
+        if (data.blog == "") {
             webLi.innerHTML = `Not Available`;
             webLi.removeAttribute("style", "opacity");
             webLi.setAttribute("style", "opacity: 0.5");
