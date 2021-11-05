@@ -71,7 +71,6 @@ form.addEventListener("submit", function(e){
         
         if (data.blog == "") {
             webLi.innerHTML = `Not Available`;
-            webLi.removeAttribute("style", "opacity");
             webLi.setAttribute("style", "opacity: 0.5");
         } else {
             webLi.innerHTML = `<a href="_blank">${data.blog}</a>`;
