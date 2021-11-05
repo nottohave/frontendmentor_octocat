@@ -27,6 +27,7 @@ form.addEventListener("submit", function(e){
     .then((result) => result.json())
     .then((data) => {
         console.log(data);
+        console.log(data.bio);
 
         // Date format
         let dt = new Date(data.created_at).toLocaleDateString(undefined,{dateStyle:'medium'});
@@ -45,7 +46,7 @@ form.addEventListener("submit", function(e){
         if (data.bio === null) {
             infoUser.innerHTML = `<p>This profile has no bio</p>`
         } else {
-            infoUser.innherHTML = `<p>${data.bio}</p>`
+            infoUser.innerHTML = `<p>${data.bio}</p>`
         }
 
         // User repos, followers & following statistic
@@ -76,8 +77,8 @@ form.addEventListener("submit", function(e){
             twit.innerHTML = `Not Available`;
             twit.setAttribute("style", "opacity:0.5");
         } else {
-            twit.innerHTML = `${data.twitter_username}`;
             twit.removeAttribute("style", "opacity");
+            twit.innerHTML = `${data.twitter_username}`;
         }
 
         if (data.company == null) {
