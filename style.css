@@ -255,10 +255,6 @@ ul a {
     padding-right: 1.43em !important;
 }
 
-.twitter img {
-    opacity: 0.5;
-}
-
 .info__location span a {
     text-decoration: none !important;
     color: #2B3442;
@@ -270,7 +266,7 @@ ul a {
 }
 
 .twitter {
-    color: hsl(217, 20%, 71%) !important;
+    opacity: 0.5;
 }
 
 /* Tablet size 768 x 1024 */
