@@ -247,10 +247,6 @@ ul a {
     padding-right: 1.12em;
 }
 
-.info__location span img.dark {
-    filter: invert(40%) brightness(10);
-}
-
 .location img {
     padding-right: 1.43em !important;
 }

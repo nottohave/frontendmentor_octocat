@@ -82,11 +82,12 @@ form.addEventListener("submit", function(e){
         
         if (data.twitter_username == null) {
             twitTxt.innerHTML = `Not Available`;
-            twitter.setAttribute("style", "opacity:0.5");
+            twitter.removeAttribute("style", "opacity")
         } else {
             twitTxt.innerHTML = `${data.twitter_username}`;
-            twitter.removeAttribute("style", "opacity");
-        }
+            twitter.setAttribute("style", "opacity: 1 !important");
+
+        };
 
         if (data.company == null) {
             compTxt.innerHTML = `Not Availabe`;
@@ -94,7 +95,7 @@ form.addEventListener("submit", function(e){
         } else {
             compTxt.innerHTML = `${data.company}`;
             company.removeAttribute("style", "opacity");
-        }
+        };
 
     })
 
