@@ -27,7 +27,12 @@ form.addEventListener("submit", function(e){
     .then((result) => result.json())
     .then((data) => {
         console.log(data);
-        console.log(data.bio);
+
+        userLo.removeAttribute("style", "opacity");
+        webLi.removeAttribute("style", "opacity");
+        twit.removeAttribute("style", "opacity");
+        comp.removeAttribute("style", "opacity");
+
 
         // Date format
         let dt = new Date(data.created_at).toLocaleDateString(undefined,{dateStyle:'medium'});
@@ -69,7 +74,7 @@ form.addEventListener("submit", function(e){
             webLi.removeAttribute("style", "opacity");
             webLi.setAttribute("style", "opacity: 0.5");
         } else {
-            webLi.innerHTML = `${data.blog}`;
+            webLi.innerHTML = `<a href="_blank">${data.blog}</a>`;
             webLi.removeAttribute("style", "opacity");
         };
         
