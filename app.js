@@ -86,7 +86,6 @@ form.addEventListener("submit", function(e){
         } else {
             twitTxt.innerHTML = `${data.twitter_username}`;
             twitter.setAttribute("style", "opacity: 1 !important");
-
         };
 
         if (data.company == null) {
