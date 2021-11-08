@@ -36,7 +36,6 @@
 
 
 body {
-    height: 90vh;
     background: #f6f8ff;
 }
 
@@ -374,9 +373,10 @@ ul {
     }
 }
 
+/* Dark Mode in desktop by default */
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: black;
+        background-color: #141D2F;
     }
     .logo {
         color: var(--darkThemeText);
@@ -387,9 +387,31 @@ ul {
     .dark-icon {
         content: url(./assets/icon-sun.svg);
     }
-    .form-group, .form-control {
+    .form-group, 
+    .form-control {
         background-color: var(--darkThemeInputBox);
-        color: var(--darkThemeText);
         box-shadow: none;
+        color: var(--darkThemeText);
+    }
+    ::placeholder {
+        opacity: 1; /* for Firefox */
+        color: var(--darkThemeText);
+    }
+    /* user body form */
+    .info__container {
+        background-color: var(--darkThemeInputBox);
+        box-shadow: none;
+    }
+    .info__title h2, 
+    .info__title p,
+    .info__user p,
+    .info__stats {
+        color: var(--darkThemeText); 
+    }
+    .info__stats {
+        background-color: #141D2F;
+    }
+    .info__stats span::first-line {
+        color: var(--darkThemeText);
     }
 }
