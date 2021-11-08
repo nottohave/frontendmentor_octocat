@@ -378,6 +378,8 @@ ul {
     body {
         background-color: #141D2F;
     }
+
+    /* header and input box */
     .logo {
         color: var(--darkThemeText);
     }
@@ -397,6 +399,7 @@ ul {
         opacity: 1; /* for Firefox */
         color: var(--darkThemeText);
     }
+
     /* user body form */
     .info__container {
         background-color: var(--darkThemeInputBox);
@@ -414,4 +417,15 @@ ul {
     .info__stats span::first-line {
         color: var(--darkThemeText);
     }
+    
+    /* user location & web links */
+    .info__location span img {
+        filter: invert(65%) sepia(51%) saturate(6848%) hue-rotate(162deg) brightness(96%) contrast(101%)    }
+    .location-name,
+    .website-name a,
+    .twitter-link,
+    .company-name {
+        color: var(--darkThemeText) !important;
+    }
+
 }
