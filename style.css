@@ -420,7 +420,8 @@ ul {
     
     /* user location & web links */
     .info__location span img {
-        filter: invert(65%) sepia(51%) saturate(6848%) hue-rotate(162deg) brightness(96%) contrast(101%)    }
+        filter: invert(25%) brightness(1000%);
+    }
     .location-name,
     .website-name a,
     .twitter-link,
