@@ -5,6 +5,9 @@ var form = document.getElementById("myForm");
 var profilePicture = document.querySelector(".info__ProfilePic");
 var infoTitleH2 = document.querySelector(".info__title");
 
+// hide octocat-picture when searching for a user
+var octocat_picture_deskMode = document.querySelector(".octocat-picture");
+
 // user paragraph
 var infoUser = document.querySelector(".info__user");
 
@@ -38,11 +41,17 @@ form.addEventListener("submit", function(e){
         // Date format
         let dt = new Date(data.created_at).toLocaleDateString(undefined,{dateStyle:'medium'});
 
+        // Hide octocat-picture
+        octocat_picture_deskMode.setAttribute("style", "display: none");
+
         // User picture and title information
         profilePicture.innerHTML = 
         `
             <a target="_blank" href="https://www.github.com/${originalName}"> <img src="${data.avatar_url}"/>
         `;
+
+        profilePicture.setAttribute("style", "display: contents")
+
         infoTitleH2.innerHTML = 
         `<h2>${data.name}</h2>` +
         `<a href="#">@${(data.login).toLowerCase()}</a>` +
@@ -89,7 +98,7 @@ form.addEventListener("submit", function(e){
         };
 
         if (data.company == null) {
-            compTxt.innerHTML = `Not Availabe`;
+            compTxt.innerHTML = `Not Available`;
             company.setAttribute("style", "opacity: 0.5");
         } else {
             compTxt.innerHTML = `${data.company}`;
