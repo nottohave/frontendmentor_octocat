@@ -49,7 +49,6 @@ header {
     padding: 2em 1em;
 }
 
-
 .logo {
     font-family: "Octocat Bold";
     font-size: 26px;
@@ -141,6 +140,10 @@ ul {
     box-shadow: 0px 5px 15px hsl(217, 20%, 81%);
 }
 
+.info__container__right {
+    width: 100%;
+}
+
 /* USER PROFILE HEADER */
 .octocat-picture {
     display: none;
@@ -150,7 +153,15 @@ ul {
     display: flex;
 }
 
-.info__ProfilePic img {
+.profileImg_DisplayYes {
+    display: flex;
+    width: 4.5em;
+    height: 4.5em;
+    border-radius: 50%;
+
+}
+
+.profileImg {
     width: 4.5em;
     height: 4.5em;
     border-radius: 50%;
@@ -248,12 +259,12 @@ ul {
     padding-right: 1.43em !important;
 }
 
-.info__location span a {
-    text-decoration: none !important;
+.website-name a {
+    text-decoration: none;
     color: #2B3442;
 }
 
-.info__location span a, .website-name:hover {
+.website-name a:hover {
     text-decoration: underline;
     cursor: pointer;
 }
@@ -264,12 +275,12 @@ ul {
 
 /* Tablet size 768 x 1024 */
 @media screen and (min-width: 768px) {
-    /* center */
+    /* center body */
     body {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
     }
     /* header */
     .main-head {
@@ -277,8 +288,8 @@ ul {
     }
     /* body */
     .container {
-        max-width: 35.125em;
-        max-height: 37.75em;
+        width: 35.125em;
+        height: 37.75em;
     }
     .form-group {
         padding-right: 0.6em;
@@ -298,7 +309,7 @@ ul {
     .info__container {
         padding: 2em;
     }
-    .info__ProfilePic img {
+    .profileImg {
         width: 7.125em;
         height: 7.4375em;
     }
@@ -332,15 +343,15 @@ ul {
     }
 }
 
-/* Desktop size 1440 x 900 */
-@media screen and (min-width: 1440px) {
+/* Desktop size 1400 x 900 */
+@media screen and (min-width: 1400px) {
     /* header */
     .main-head {
         max-width: 46.25em;
     }
     /* body */
     .container {
-        max-width: 46.25em;
+        min-width: 46.25em;
     }
 
     /* Octocat profile picture */
@@ -357,8 +368,13 @@ ul {
         height: 7.4em;
         border-radius: 50%;
     }
-    .info__ProfilePic img {
+    .profileImg {
         display: none;
+    }
+    .profileImg_DisplayYes {
+        width: 7.4em;
+        height: 7.4em;
+        border-radius: 50%;
     }
     .info__title {
         padding-left: 0em;
@@ -423,6 +439,7 @@ ul {
         filter: invert(25%) brightness(1000%);
     }
     .location-name,
+    .website-name,
     .website-name a,
     .twitter-link,
     .company-name {
