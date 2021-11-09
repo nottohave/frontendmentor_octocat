@@ -44,6 +44,8 @@ form.addEventListener("submit", function(e){
     .then((result) => result.json())
     .then((data) => {
 
+        console.log(data);
+        
         // Date format
         let dt = new Date(data.created_at).toLocaleDateString(undefined,{dateStyle:'medium'});
 
@@ -122,7 +124,6 @@ form.addEventListener("submit", function(e){
             compTxt.innerHTML = `${data.company}`;
             company.removeAttribute("style", "opacity");
         };
-
     })
 
 })
