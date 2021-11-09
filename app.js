@@ -27,6 +27,10 @@ var webLiTxt = document.querySelector(".website-name");
 var twitTxt = document.querySelector(".twitter-link");
 var compTxt = document.querySelector(".company-name");
 
+// desktop screen resolution matches will display user image
+// hide the octocat-profile picture in desktop mode
+var desktopMode = window.matchMedia("(min-width: 1400px)");
+
 
 form.addEventListener("submit", function(e){
     e.preventDefault();
@@ -37,13 +41,9 @@ form.addEventListener("submit", function(e){
     fetch("https://api.github.com/users/" + originalName)
     .then((result) => result.json())
     .then((data) => {
-        console.log(data);
 
         // Date format
         let dt = new Date(data.created_at).toLocaleDateString(undefined,{dateStyle:'medium'});
-
-        // Hide octocat-picture
-        octocat_picture_deskMode.setAttribute("style", "display: none");
 
         // User picture and title information
         profilePicture.innerHTML = 
@@ -51,9 +51,20 @@ form.addEventListener("submit", function(e){
             <a target="_blank" href="https://www.github.com/${originalName}"> 
             <img class="profileImg_DisplayYes" src="${data.avatar_url}" alt="github-user-profileimg"/>
         `;
-        profileImg.setAttribute("style", "display: none");
-
-        profilePicture.removeAttribute("style", "display: none !important" );
+        
+        // display user profile picture in octocat-picture 
+        if (desktopMode.matches) {
+            profilePicture.setAttribute("style", "display: none");
+            octocat_picture_deskMode.setAttribute("style", "display:unset");
+            octocat_picture_deskMode.innerHTML = 
+            `
+                <a target="_blank" href="https://www.github.com/${originalName}"> 
+                <img class="profileImg_DisplayYes" src="${data.avatar_url}" alt="github-user-profileimg"/>
+            `
+        } else {
+            octocat_picture_deskMode.setAttribute("style", "display: none");
+            profilePicture.setAttribute("style", "display: unset");
+        }
 
         infoTitleH2.innerHTML = 
         `<h2>${data.name}</h2>` +
