@@ -47,10 +47,11 @@ form.addEventListener("submit", function(e){
         // User picture and title information
         profilePicture.innerHTML = 
         `
-            <a target="_blank" href="https://www.github.com/${originalName}"> <img src="${data.avatar_url}"/>
+            <a target="_blank" href="https://www.github.com/${originalName}"> 
+            <img class="profileImg_DisplayYes" src="${data.avatar_url}" alt="github-user-profileimg"/>
         `;
 
-        profilePicture.setAttribute("style", "display: contents")
+        profilePicture.removeAttribute("style", "display: none !important" )
 
         infoTitleH2.innerHTML = 
         `<h2>${data.name}</h2>` +
