@@ -3,6 +3,7 @@ var form = document.getElementById("myForm");
 
 // user profile picture and title
 var profilePicture = document.querySelector(".info__ProfilePic");
+var profileImg = document.querySelector(".profileImg");
 var infoTitleH2 = document.querySelector(".info__title");
 
 // hide octocat-picture when searching for a user
@@ -50,8 +51,9 @@ form.addEventListener("submit", function(e){
             <a target="_blank" href="https://www.github.com/${originalName}"> 
             <img class="profileImg_DisplayYes" src="${data.avatar_url}" alt="github-user-profileimg"/>
         `;
+        profileImg.setAttribute("style", "display: none");
 
-        profilePicture.removeAttribute("style", "display: none !important" )
+        profilePicture.removeAttribute("style", "display: none !important" );
 
         infoTitleH2.innerHTML = 
         `<h2>${data.name}</h2>` +
