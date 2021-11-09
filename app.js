@@ -33,6 +33,7 @@ var desktopMode = window.matchMedia("(min-width: 1400px)");
 
 
 // return no result when api cant find the user 
+// dark mode
 form.addEventListener("submit", function(e){
     e.preventDefault();
 
