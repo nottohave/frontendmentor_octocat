@@ -32,6 +32,7 @@ var compTxt = document.querySelector(".company-name");
 var desktopMode = window.matchMedia("(min-width: 1400px)");
 
 
+// return no result when api cant find the user 
 form.addEventListener("submit", function(e){
     e.preventDefault();
 
@@ -52,7 +53,8 @@ form.addEventListener("submit", function(e){
             <img class="profileImg_DisplayYes" src="${data.avatar_url}" alt="github-user-profileimg"/>
         `;
         
-        // display user profile picture in octocat-picture 
+        // 1400px: display user profile picture in octocat-picture
+        // <1400px: display user profile pic in info__ProfilePic
         if (desktopMode.matches) {
             profilePicture.setAttribute("style", "display: none");
             octocat_picture_deskMode.setAttribute("style", "display:unset");
@@ -66,6 +68,7 @@ form.addEventListener("submit", function(e){
             profilePicture.setAttribute("style", "display: unset");
         }
 
+        // add user header information to title
         infoTitleH2.innerHTML = 
         `<h2>${data.name}</h2>` +
         `<a href="#">@${(data.login).toLowerCase()}</a>` +
