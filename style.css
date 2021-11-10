@@ -410,9 +410,6 @@ ul {
     .logo {
         color: var(--darkThemeText);
     }
-    .anchor-theme {
-        color: var(--darkThemeText);
-    }
     .dark-icon {
         content: url(./assets/icon-sun.svg);
     }
