@@ -155,6 +155,9 @@ form.addEventListener("submit", function(e){
 var darkLightTheme = document.querySelector(".anchor-theme");
 var titleTheme = document.querySelector(".title-theme");
 var icon = document.querySelector(".dark-icon");
+var body = document.querySelector("body");
+var logo = document.querySelector(".logo");
+
 
 // Enable/Disable Dark Mode for user
 function switchThemeColorFunc() {
@@ -162,6 +165,12 @@ function switchThemeColorFunc() {
     if (titleTheme.innerHTML === "DARK") {
         titleTheme.innerHTML = "LIGHT";
         icon.setAttribute("style", "content: url(./assets/icon-sun.svg)");
+        body.style.background = "#141D2F";
+        logo.style.color = "#FFFFFF";
+        titleTheme.style.color = "#FFFFFF";
+        formgroup.style.background = "#1E2A47";
+        inputBox.style.background = "#1E2A47"
+        inputBox.style.color = "#FFFFFF";
     } else {
         titleTheme.innerHTML = "DARK";
         icon.setAttribute("style", "content: url(./assets/icon-moon.svg)");
