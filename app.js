@@ -6,6 +6,13 @@ var profilePicture = document.querySelector(".info__ProfilePic");
 var profileImg = document.querySelector(".profileImg");
 var infoTitleH2 = document.querySelector(".info__title");
 
+// grab search box, input box, the button & label
+var formgroup = document.querySelector(".form-group");
+var inputBox = document.querySelector(".form-control");
+var searchButton = document.querySelector(".form-group__searchBtn");
+var searchStatusLabel = document.querySelector(".search-status-label");
+
+
 // hide octocat-picture when searching for a user
 var octocat_picture_deskMode = document.querySelector(".octocat-picture");
 
@@ -46,84 +53,110 @@ form.addEventListener("submit", function(e){
 
         console.log(data);
         
-        // Date format
-        let dt = new Date(data.created_at).toLocaleDateString(undefined,{dateStyle:'medium'});
+        if (data.login && data.avatar_url !== undefined) {
 
-        // User picture and title information
-        profilePicture.innerHTML = 
-        `
-            <a target="_blank" href="https://www.github.com/${originalName}"> 
-            <img class="profileImg_DisplayYes" src="${data.avatar_url}" alt="github-user-profileimg"/>
-        `;
-        
-        // 1400px: display user profile picture in octocat-picture
-        // <1400px: display user profile pic in info__ProfilePic
-        if (desktopMode.matches) {
-            profilePicture.setAttribute("style", "display: none");
-            octocat_picture_deskMode.setAttribute("style", "display:unset");
-            octocat_picture_deskMode.innerHTML = 
+            // remove label, reset search box, input box, button style
+            searchStatusLabel.setAttribute("style", "display: none");
+            formgroup.setAttribute("style", 
+            "grid-template-columns: 0.2fr 1.5fr 0.5fr");
+            inputBox.removeAttribute("style", "width");
+            searchButton.removeAttribute("style", "grid-column-start; grid-columns-end;")
+
+
+            // Date format
+            let dt = new Date(data.created_at).toLocaleDateString(undefined,{dateStyle:'medium'});
+
+            // User picture and title information
+            profilePicture.innerHTML = 
             `
                 <a target="_blank" href="https://www.github.com/${originalName}"> 
                 <img class="profileImg_DisplayYes" src="${data.avatar_url}" alt="github-user-profileimg"/>
-            `
+            `;
+            
+            // 1400px: display user profile picture in octocat-picture
+            // <1400px: display user profile pic in info__ProfilePic
+            if (desktopMode.matches) {
+                profilePicture.setAttribute("style", "display: none");
+                octocat_picture_deskMode.setAttribute("style", "display:unset");
+                octocat_picture_deskMode.innerHTML = 
+                `
+                    <a target="_blank" href="https://www.github.com/${originalName}"> 
+                    <img class="profileImg_DisplayYes" src="${data.avatar_url}" alt="github-user-profileimg"/>
+                `
+            } else {
+                octocat_picture_deskMode.setAttribute("style", "display: none");
+                profilePicture.setAttribute("style", "display: unset");
+            }
+
+            // add user header information to title
+            infoTitleH2.innerHTML = 
+            `<h2>${data.name}</h2>` +
+            `<a href="#">@${(data.login).toLowerCase()}</a>` +
+            `<p>Joined  `  + dt + `</p>`;
+            
+            // User information description
+            if (data.bio === null) {
+                infoUser.innerHTML = `<p>This profile has no bio</p>`
+            } else {
+                infoUser.innerHTML = `<p>${data.bio}</p>`
+            }
+
+            // User repos, followers & following statistic
+            infoStats.innerHTML = 
+            `<span>Repos <br>${data.public_repos}</span>` +
+            `<span>Followers <br>${data.followers}</span>` +
+            `<span>Following <br>${data.following}</span>`;
+
+            // user location, website link, twitter, company
+            // if the information is null or "", display NA, grey out the area
+            // if user has the information for the above, display the information with a different text color
+            if (data.location == null) {
+                userLoTxt.innerHTML = `Not Available`;
+                userLocation.setAttribute("style", "opacity: 0.5");
+            } else {
+                userLoTxt.innerHTML = `${data.location}`;
+                userLocation.removeAttribute("style", "opacity");
+            };
+            
+            if (data.blog == "") {
+                webLiTxt.innerHTML = `Not Available`;
+                webLink.setAttribute("style", "opacity: 0.5");
+            } else {
+                webLiTxt.innerHTML = `<a href="_blank">${data.blog}</a>`;
+                webLink.removeAttribute("style", "opacity");
+            };
+            
+            if (data.twitter_username == null) {
+                twitTxt.innerHTML = `Not Available`;
+                twitter.removeAttribute("style", "opacity")
+            } else {
+                twitTxt.innerHTML = `${data.twitter_username}`;
+                twitter.setAttribute("style", "opacity: 1 !important");
+            };
+
+            if (data.company == null) {
+                compTxt.innerHTML = `Not Available`;
+                company.setAttribute("style", "opacity: 0.5");
+            } else {
+                compTxt.innerHTML = `${data.company}`;
+                company.removeAttribute("style", "opacity");
+            };
+
         } else {
-            octocat_picture_deskMode.setAttribute("style", "display: none");
-            profilePicture.setAttribute("style", "display: unset");
+            console.log("Not Found");
+
+            // grab the form-group
+            formgroup.removeAttribute("style", "grid-template-columns");
+            // set the grid style to 0.5fr
+            formgroup.setAttribute("style", "grid-template-columns: 0.2fr 1.5fr 0.5fr 0.5fr");
+            // set width for input box to 10em
+            inputBox.setAttribute("style", "width: 10em");
+            // set the search button start column 4 -5
+            searchButton.setAttribute("style", "grid-column-start: 4, grid-column-end: 5");
+            // display the label No Results
+            searchStatusLabel.setAttribute("style", "display: unset; ");
         }
 
-        // add user header information to title
-        infoTitleH2.innerHTML = 
-        `<h2>${data.name}</h2>` +
-        `<a href="#">@${(data.login).toLowerCase()}</a>` +
-        `<p>Joined  `  + dt + `</p>`;
-        
-        // User information description
-        if (data.bio === null) {
-            infoUser.innerHTML = `<p>This profile has no bio</p>`
-        } else {
-            infoUser.innerHTML = `<p>${data.bio}</p>`
-        }
-
-        // User repos, followers & following statistic
-        infoStats.innerHTML = 
-        `<span>Repos <br>${data.public_repos}</span>` +
-        `<span>Followers <br>${data.followers}</span>` +
-        `<span>Following <br>${data.following}</span>`;
-
-        // user location, website link, twitter, company
-        // if the information is null or "", display NA, grey out the area
-        // if user has the information for the above, display the information with a different text color
-        if (data.location == null) {
-            userLoTxt.innerHTML = `Not Available`;
-            userLocation.setAttribute("style", "opacity: 0.5");
-        } else {
-            userLoTxt.innerHTML = `${data.location}`;
-            userLocation.removeAttribute("style", "opacity");
-        };
-        
-        if (data.blog == "") {
-            webLiTxt.innerHTML = `Not Available`;
-            webLink.setAttribute("style", "opacity: 0.5");
-        } else {
-            webLiTxt.innerHTML = `<a href="_blank">${data.blog}</a>`;
-            webLink.removeAttribute("style", "opacity");
-        };
-        
-        if (data.twitter_username == null) {
-            twitTxt.innerHTML = `Not Available`;
-            twitter.removeAttribute("style", "opacity")
-        } else {
-            twitTxt.innerHTML = `${data.twitter_username}`;
-            twitter.setAttribute("style", "opacity: 1 !important");
-        };
-
-        if (data.company == null) {
-            compTxt.innerHTML = `Not Available`;
-            company.setAttribute("style", "opacity: 0.5");
-        } else {
-            compTxt.innerHTML = `${data.company}`;
-            company.removeAttribute("style", "opacity");
-        };
     })
 
 })
