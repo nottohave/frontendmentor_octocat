@@ -17,22 +17,10 @@
 
 /* light mode color */
 :root {
-    --blue: #0079FF;
-    --grey: #697C9A;
-    --blue-grey: #4B6A9B;
-    --darkblue: #2B3442;
-    --background: #F6F8FF;
-    --foreground: #FEFEFE;
     --darkThemeText: #FFFFFF;
     --darkThemeInputBox: #1E2A47;
 }
 
-/* .dark {
-    --darkblue: #FFFFFF;
-    --grey: #FFFFFF;
-    --background: #141d2e;
-    --foreground: #1E2A47;
-} */
 
 
 body {
@@ -65,19 +53,27 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 5.25em;
     text-decoration: none;
-    font-family: "Octocat Bold";
-    color: #697c9a;
-    font-size: 0.9em;
-    line-height: 38px;
-    word-spacing: 5px;
-    letter-spacing: 2px;
 }
 
+.title-theme {
+    font-family: "Octocat Bold";
+    color: #697c9a;
+    font-size: 0.81em;
+    line-height: 38px;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+}
 
 .dark-icon {
     content: url(./assets/icon-moon.svg);
+    margin-left: 1em;
+    height: 23px;
+    width: 23px;
+}
+
+.light-icon {
+    content: url(./assets/icon-sun.svg);
     margin-left: 1em;
     height: 23px;
     width: 23px;
@@ -141,7 +137,6 @@ ul {
 .form-group__searchBtn:hover {
     opacity: 0.5;
 }
-
 
 .info__container {
     margin: 1em;
