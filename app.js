@@ -11,7 +11,7 @@ var logo = document.querySelector(".logo");
 // target body user information
 var infoContainer = document.querySelector(".info__container");
 
-// user profile picture and title
+// user profile picture and title "The Octocat"
 var profilePicture = document.querySelector(".info__ProfilePic");
 var profileImg = document.querySelector(".profileImg");
 var infoTitleH2 = document.querySelector(".info__title");
@@ -181,7 +181,13 @@ function switchThemeColorFunc() {
         // user body info
         infoContainer.style.background = "#1E2A47";
         infoContainer.style.boxShadow = "none";
-        
+        // user body title The Octocat
+        console.log(
+            "this should be h2, " + infoTitleH2.children[0] +
+            "this should be anchor " + infoTitleH2.children[1] + 
+            "this should be paragraph " + infoTitleH2.children[2]);
+
+
     } else {
         titleTheme.innerHTML = "DARK";
         icon.setAttribute("style", "content: url(./assets/icon-moon.svg)");
