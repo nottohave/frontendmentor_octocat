@@ -12,7 +12,6 @@ var inputBox = document.querySelector(".form-control");
 var searchButton = document.querySelector(".form-group__searchBtn");
 var searchStatusLabel = document.querySelector(".search-status-label");
 
-
 // hide octocat-picture when searching for a user
 var octocat_picture_deskMode = document.querySelector(".octocat-picture");
 
@@ -34,13 +33,9 @@ var webLiTxt = document.querySelector(".website-name");
 var twitTxt = document.querySelector(".twitter-link");
 var compTxt = document.querySelector(".company-name");
 
-// desktop screen resolution matches will display user image
-// hide the octocat-profile picture in desktop mode
+// display certain image for desktop resolution
 var desktopMode = window.matchMedia("(min-width: 1400px)");
 
-
-// return no result when api cant find the user 
-// dark mode
 form.addEventListener("submit", function(e){
     e.preventDefault();
 
@@ -51,10 +46,9 @@ form.addEventListener("submit", function(e){
     .then((result) => result.json())
     .then((data) => {
 
-        console.log(data);
-        
+        // return result when api found the user
+        // else, return no results
         if (data.login && data.avatar_url !== undefined) {
-
             // remove label, reset search box, input box, button style
             searchStatusLabel.setAttribute("style", "display: none");
             formgroup.setAttribute("style", 
@@ -143,8 +137,6 @@ form.addEventListener("submit", function(e){
             };
 
         } else {
-            console.log("Not Found");
-
             // grab the form-group
             formgroup.removeAttribute("style", "grid-template-columns");
             // set the grid style to 0.5fr
@@ -156,7 +148,26 @@ form.addEventListener("submit", function(e){
             // display the label No Results
             searchStatusLabel.setAttribute("style", "display: unset; ");
         }
-
     })
-
 })
+
+// grab the dark/light anchor tag
+var darkLightTheme = document.querySelector(".anchor-theme");
+// Enable/Disable Dark Mode for user
+function switchThemeColorFunc() {
+    console.log("Success");
+    // if it display Dark, switch text to Light
+    if (darkLightTheme.innerHTML === "DARK") {
+        darkLightTheme.innerHTML = "LIGHT" + 
+        `
+            <img class="light-icon" alt="web-theme-dark">
+        `
+    } else {
+        darkLightTheme.innerHTML = "DARK" + 
+        `
+            <img class="dark-icon" alt="web-theme-light
+        `
+    }
+    // else, switch to Dark
+
+}
