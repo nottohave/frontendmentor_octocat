@@ -151,22 +151,21 @@ form.addEventListener("submit", function(e){
     })
 })
 
-// grab the dark/light anchor tag
+// grab the dark/light anchor tag, title, img
 var darkLightTheme = document.querySelector(".anchor-theme");
+var titleTheme = document.querySelector(".title-theme");
+var icon = document.querySelector(".dark-icon");
+
 // Enable/Disable Dark Mode for user
 function switchThemeColorFunc() {
-    console.log("Success");
-    // if it display Dark, switch text to Light
-    if (darkLightTheme.innerHTML === "DARK") {
-        darkLightTheme.innerHTML = "LIGHT" + 
-        `
-            <img class="light-icon" alt="web-theme-dark">
-        `
+    // if it display Dark, switch text to Light, switch icon to sun
+    if (titleTheme.innerHTML === "DARK") {
+        titleTheme.innerHTML = "LIGHT";
+        icon.setAttribute("style", "content: url(./assets/icon-sun.svg)");
     } else {
-        darkLightTheme.innerHTML = "DARK" + 
-        `
-            <img class="dark-icon" alt="web-theme-light
-        `
+        titleTheme.innerHTML = "DARK";
+        icon.setAttribute("style", "content: url(./assets/icon-moon.svg)");
+
     }
     // else, switch to Dark
 
