@@ -1,6 +1,16 @@
 // get input from search box
 var form = document.getElementById("myForm");
 
+// target the dark/light anchor tag, title, img
+var darkLightTheme = document.querySelector(".anchor-theme");
+var titleTheme = document.querySelector(".title-theme");
+var icon = document.querySelector(".dark-icon");
+var body = document.querySelector("body");
+var logo = document.querySelector(".logo");
+
+// target body user information
+var infoContainer = document.querySelector(".info__container");
+
 // user profile picture and title
 var profilePicture = document.querySelector(".info__ProfilePic");
 var profileImg = document.querySelector(".profileImg");
@@ -151,26 +161,27 @@ form.addEventListener("submit", function(e){
     })
 })
 
-// grab the dark/light anchor tag, title, img
-var darkLightTheme = document.querySelector(".anchor-theme");
-var titleTheme = document.querySelector(".title-theme");
-var icon = document.querySelector(".dark-icon");
-var body = document.querySelector("body");
-var logo = document.querySelector(".logo");
 
 
 // Enable/Disable Dark Mode for user
 function switchThemeColorFunc() {
     // if it display Dark, switch text to Light, switch icon to sun
     if (titleTheme.innerHTML === "DARK") {
+        // header
         titleTheme.innerHTML = "LIGHT";
         icon.setAttribute("style", "content: url(./assets/icon-sun.svg)");
         body.style.background = "#141D2F";
         logo.style.color = "#FFFFFF";
         titleTheme.style.color = "#FFFFFF";
+        // search box
         formgroup.style.background = "#1E2A47";
+        formgroup.style.boxShadow = "none";
         inputBox.style.background = "#1E2A47"
         inputBox.style.color = "#FFFFFF";
+        // user body info
+        infoContainer.style.background = "#1E2A47";
+        infoContainer.style.boxShadow = "none";
+        
     } else {
         titleTheme.innerHTML = "DARK";
         icon.setAttribute("style", "content: url(./assets/icon-moon.svg)");
