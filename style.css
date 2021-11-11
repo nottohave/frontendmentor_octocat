@@ -101,6 +101,7 @@ ul {
     font-size: 0.75em;
     line-height: 1.25em;
     color: #2B3442;
+    background: none;
 }
 
 .form-control:hover {
@@ -109,6 +110,7 @@ ul {
 .form-control:focus {
     outline: none;
 }
+
 
 .search-status-label {
     display: none;
