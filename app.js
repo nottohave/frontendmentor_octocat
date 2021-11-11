@@ -176,17 +176,21 @@ function switchThemeColorFunc() {
         // search box
         formgroup.style.background = "#1E2A47";
         formgroup.style.boxShadow = "none";
-        inputBox.style.background = "#1E2A47"
-        inputBox.style.color = "#FFFFFF";
+        inputBox.setAttribute("style", "opacity: 1");
+        inputBox.setAttribute("style", "color: #FFFFFF");
         // user body info
         infoContainer.style.background = "#1E2A47";
         infoContainer.style.boxShadow = "none";
         // user body title The Octocat
-        console.log(
-            "this should be h2, " + infoTitleH2.children[0] +
-            "this should be anchor " + infoTitleH2.children[1] + 
-            "this should be paragraph " + infoTitleH2.children[2]);
-
+        infoTitleH2.children[0].style.color = "#FFFFFF";
+        infoTitleH2.children[2].style.color = "#FFFFFF";
+        // user paragraph
+        infoUser.children[0].style.color = "#FFFFFF";
+        // user stats
+        infoStats.style.background = "#141D2F";
+        infoStats.children[0].setAttribute("style", "color: #FFFFFF");
+        infoStats.children[1].style.color = "#FFFFFF";
+        infoStats.children[2].style.color = "#FFFFFF";
 
     } else {
         titleTheme.innerHTML = "DARK";
