@@ -32,10 +32,17 @@ var infoUser = document.querySelector(".info__user");
 var infoStats = document.querySelector(".info__stats");
 
 // user box of location, web link, twitter, company
+// ^img
+var imgLocation = document.querySelector(".img-location");
+var imgWebsite = document.querySelector(".img-website");
+var imgTwitter = document.querySelector(".img-twitter");
+var imgCompany = document.querySelector(".img-company");
+
 var userLocation = document.querySelector(".location");
 var webLink = document.querySelector(".website");
 var twitter = document.querySelector(".twitter");
 var company = document.querySelector(".company");
+
 
 // user text of location, website link, twitter, company
 var userLoTxt = document.querySelector(".location-name");
@@ -191,10 +198,55 @@ function switchThemeColorFunc() {
         infoStats.children[0].setAttribute("style", "color: #FFFFFF");
         infoStats.children[1].style.color = "#FFFFFF";
         infoStats.children[2].style.color = "#FFFFFF";
+        // user location, blog, twitter, company
+        // ^img
+        imgLocation.style.filter = "invert(25%) brightness(1000%)";
+        imgWebsite.style.filter = "invert(25%) brightness(1000%)";
+        imgTwitter.style.filter = "invert(25%) brightness(1000%)";
+        imgCompany.style.filter = "invert(25%) brightness(1000%)";
+        // ^text
+        userLocation.style.color = "#FFFFFF";
+        webLiTxt.children[0].style.color = "#FFFFFF";
+        twitter.style.color = "#FFFFFF";
+        company.style.color = "#FFFFFF";
 
     } else {
+        // header
         titleTheme.innerHTML = "DARK";
         icon.setAttribute("style", "content: url(./assets/icon-moon.svg)");
+        body.removeAttribute("style", "background");
+        logo.removeAttribute("style", "color");
+        titleTheme.removeAttribute("style", "color");
+        // search box
+        formgroup.removeAttribute("style", "background");
+        formgroup.removeAttribute("style", "box-shadow");
+        inputBox.removeAttribute("style", "opacity: 1");
+        inputBox.removeAttribute("style", "color: #FFFFFF");
+        // user body info
+        infoContainer.removeAttribute("style", "background");
+        infoContainer.removeAttribute("style", "box-shadow");
+        // user body title The Octocat
+        infoTitleH2.children[0].removeAttribute("style", "color");
+        infoTitleH2.children[2].removeAttribute("style", "color");
+        // user paragraph
+        infoUser.children[0].removeAttribute("style", "color");
+        // user stats
+        infoStats.removeAttribute("style", "background");
+        infoStats.children[0].removeAttribute("style", "color");
+        infoStats.children[1].removeAttribute("style", "color");
+        infoStats.children[2].removeAttribute("style", "color");
+        // user location, blog, twitter, company
+        // ^img
+        imgLocation.removeAttribute("style", "filter");
+        imgWebsite.removeAttribute("style", "filter");
+        imgTwitter.removeAttribute("style", "filter");
+        imgCompany.removeAttribute("style", "filter");
+        // ^text
+        userLocation.removeAttribute("style", "color");
+        webLiTxt.children[0].removeAttribute("style", "color");
+        twitter.removeAttribute("style", "color");
+        company.removeAttribute("style", "color");
+
 
     }
     // else, switch to Dark
