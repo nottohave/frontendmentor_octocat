@@ -43,7 +43,6 @@ var webLink = document.querySelector(".website");
 var twitter = document.querySelector(".twitter");
 var company = document.querySelector(".company");
 
-
 // user text of location, website link, twitter, company
 var userLoTxt = document.querySelector(".location-name");
 var webLiTxt = document.querySelector(".website-name");
@@ -205,7 +204,11 @@ function switchThemeColorFunc() {
         imgCompany.style.filter = "invert(25%) brightness(1000%)";
         // ^text
         userLocation.style.color = "#FFFFFF";
-        webLiTxt.children[0].style.color = "#FFFFFF";
+        if (webLiTxt.children[0] !== undefined) {
+            webLiTxt.children[0].style.color = "#FFFFFF";
+        } else {
+            webLiTxt.style.color = "#FFFFFF";
+        }
         twitter.style.color = "#FFFFFF";
         company.style.color = "#FFFFFF";
 
