@@ -61,7 +61,6 @@ form.addEventListener("submit", function(e){
     fetch("https://api.github.com/users/" + originalName)
     .then((result) => result.json())
     .then((data) => {
-
         // return result when api found the user
         // else, return no results
         if (data.login && data.avatar_url !== undefined) {
