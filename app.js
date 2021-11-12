@@ -73,7 +73,6 @@ form.addEventListener("submit", function(e){
             inputBox.removeAttribute("style", "width");
             searchButton.removeAttribute("style", "grid-column-start; grid-columns-end;")
 
-
             // Date format
             let dt = new Date(data.created_at).toLocaleDateString(undefined,{dateStyle:'medium'});
 
@@ -152,7 +151,7 @@ form.addEventListener("submit", function(e){
                 compTxt.innerHTML = `${data.company}`;
                 company.removeAttribute("style", "opacity");
             };
-
+        // No Result condition:
         } else {
             // grab the form-group
             formgroup.removeAttribute("style", "grid-template-columns");
@@ -220,6 +219,10 @@ function switchThemeColorFunc() {
         // search box
         formgroup.removeAttribute("style", "background");
         formgroup.removeAttribute("style", "box-shadow");
+        if (searchStatusLabel.style.display === "unset") {
+            formgroup.setAttribute("style", "grid-template-columns: 0.2fr 1.5fr 0.5fr 0.5fr")
+        }
+
         inputBox.removeAttribute("style", "opacity: 1");
         inputBox.removeAttribute("style", "color: #FFFFFF");
         // user body info
