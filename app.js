@@ -249,7 +249,11 @@ function switchThemeColorFunc() {
         imgCompany.removeAttribute("style", "filter");
         // ^text
         userLocation.removeAttribute("style", "color");
-        webLiTxt.children[0].removeAttribute("style", "color");
+        if (webLiTxt.children[0] !== undefined) {
+            webLiTxt.children[0].removeAttribute("style", "color");
+        } else {
+            webLiTxt.removeAttribute("style", "color");
+        }
         twitter.removeAttribute("style", "color");
         company.removeAttribute("style", "color");
 
