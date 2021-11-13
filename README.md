@@ -31,13 +31,19 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![1](./screenshot/user-search-app-DarkMode.png)
+![2](./screenshot/user-search-app-LightMode.png)
+![3](./screenshot/user-search-app-SearchDarkDesktop.png)
+![4](./screenshot/user-search-app-SearchLightDesktop.png)
+![5](./screenshot/user-search-app-SearchDarkMobile.png)
+![6](./screenshot/user-search-app-SearchLightMobile.png)
+
 
 
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Octocat Frontendmentor Challenge](https://nottohave.github.io/frontendmentor_octocat/)
 
 ## My process
 
@@ -88,6 +94,7 @@ form.addEventListener("submit", function(e){
 ### Continued development
 
 - See hover states for all interactive elements on the page - Darkmode search button hover state need to be worked on. Right now it is darken the button when user hover their mouse over.
+- When user search in dark mode, the input search will 
 - **Bonus**: Have the correct color scheme chosen for them based on their computer preferences. _Hint_: Research `prefers-color-scheme` in CSS.  --- The website color scheme can change following user computer preferences, however, when they are in dark mode, dark and light mode button won't carry out the effect. 
 
 

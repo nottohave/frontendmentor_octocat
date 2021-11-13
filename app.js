@@ -160,7 +160,16 @@ form.addEventListener("submit", function(e){
             // set the search button start column 4 -5
             searchButton.setAttribute("style", "grid-column-start: 4, grid-column-end: 5");
             // display the label No Results
-            searchStatusLabel.setAttribute("style", "display: unset; ");
+            // under the dark mode condition, the search form should keep dark background
+            if (titleTheme.innerHTML === "LIGHT") {
+                searchStatusLabel.setAttribute("style", "display: unset; ");
+                formgroup.style.background = "#1E2A47";
+                formgroup.style.boxShadow = "none";
+                inputBox.setAttribute("style", "opacity: 1");
+                inputBox.setAttribute("style", "color: #FFFFFF");        
+            } else {
+                searchStatusLabel.setAttribute("style", "display: unset; ");
+            }
         }
     })
 })
@@ -253,11 +262,15 @@ function switchThemeColorFunc() {
         } else {
             webLiTxt.removeAttribute("style", "color");
         }
-        twitter.removeAttribute("style", "color");
-        company.removeAttribute("style", "color");
-
-
+        if (twitTxt.innerHTML !== "Not Available") {
+            twitter.setAttribute("style", "opacity: 1 !important");
+        } else {
+            twitter.removeAttribute("style", "color");
+        }
+        if (compTxt.innerHTML === "Not Available") {
+            company.setAttribute("style", "opacity: 0.5");
+        } else {
+            company.removeAttribute("style", "color");
+        }
     }
-    // else, switch to Dark
-
 }
