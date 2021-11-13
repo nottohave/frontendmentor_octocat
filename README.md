@@ -56,7 +56,7 @@ Users should be able to:
 - Mobile-first workflow
 
 ### What I learned
-Utilize Javascript DOM elements
+Utilize Javascript DOM elements, prefer color scheme, a little bit of grid and flex box, javascript promise, a little bit of CSS BEM convention 
 
 To see how you can add code snippets, see below:
 
@@ -100,14 +100,14 @@ form.addEventListener("submit", function(e){
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Dark mode with a media query!](https://youtu.be/_yCgeXFAXTM) - Tutorial for `prefers-color-scheme`
+- [MDN source](https://developer.mozilla.org/en-US/) - Amazing source to get the explaination and examples to practice and apply on your code
+- [W3 School](https://www.w3schools.com/) - You can find short explaination on Javascript Dom Object here. 
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Github - [nottohave](https://github.com/nottohave)
+- Frontend Mentor - [@nottohave](https://www.frontendmentor.io/profile/nottohave)
 
 ## Acknowledgments
 
