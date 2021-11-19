@@ -248,7 +248,10 @@ ul {
     color: #2B3442;
 }
 
-.info__location span {
+.location,
+.website,
+.twitter,
+.company {
     padding: 0.5em 0em;
     width: max-content;
     display: flex;
@@ -257,7 +260,10 @@ ul {
     color: #2B3442;
 }
 
-.info__location span img {
+.img-location,
+.img-website,
+.img-twitter,
+.img-company {
     padding-right: 1.12em;
 }
 
