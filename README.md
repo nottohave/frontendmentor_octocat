@@ -42,7 +42,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Frontendmentor solution](https://www.frontendmentor.io/solutions/github-user-search-app-html-css-js-api-o0MttH_2J)
 - Live Site URL: [Octocat Frontendmentor Challenge](https://nottohave.github.io/frontendmentor_octocat/)
 
 ## My process
