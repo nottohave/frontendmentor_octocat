@@ -111,9 +111,9 @@ form.addEventListener("submit", function(e){
 
             // User repos, followers & following statistic
             infoStats.innerHTML = 
-            `<span>Repos <br>${data.public_repos}</span>` +
-            `<span>Followers <br>${data.followers}</span>` +
-            `<span>Following <br>${data.following}</span>`;
+            `<li><span>Repos </span>${data.public_repos}</li>` +
+            `<li><span>Followers </span>${data.followers}</li>` +
+            `<li><span>Following </span>${data.following}</li>`;
 
             // user location, website link, twitter, company
             // if the information is null or "", display NA, grey out the area
