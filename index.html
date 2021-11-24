@@ -12,16 +12,10 @@
   <!-- header navigation for devfinder and dark light icon -->
   <header class="main-head">
     <h1 class="logo">devfinder</h1>
-    <nav class="nav-darkLightTheme">
-      <ul>
-          <li>
-            <button class="anchor-theme" onclick="switchThemeColorFunc()">
-                <h2 class="title-theme">DARK</h2>
-                <img class="dark-icon" alt=" the crescent moon icon for darktheme or sun icon for lightheme">
-            </button>
-          </li>
-      </ul>
-  </nav>
+    <button class="anchor-theme" onclick="switchThemeColorFunc()">
+        <h2 class="title-theme">DARK</h2>
+        <img class="dark-icon" alt=" the crescent moon icon for darktheme or sun icon for lightheme">
+    </button>
   </header>
   <main class="container">
     <form id="myForm" autocomplete="off">
@@ -56,11 +50,11 @@
                                 Donec odio. Quisque volutpat mattis eros.
                             </p>
                         </div>
-                        <div class="info__stats">
-                            <span>Repos <br> 8 </span>
-                            <span>Followers <br> 3938 </span>
-                            <span>Following <br> 9 </span>
-                        </div>
+                        <ul class="info__stats">
+                            <li><span>Repos </span> 8 </li>
+                            <li><span>Followers </span> 3938 </li>
+                            <li><span>Following </span> 9 </li>
+                        </ul>
                           
                         <div class="info__location">
                               <div class="location">
