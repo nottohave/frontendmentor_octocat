@@ -58,6 +58,7 @@ ul {
 
 .anchor-theme:hover {
     cursor: pointer;
+    filter: contrast(1.75) brightness(50%);
 }
 
 .title-theme {
@@ -69,12 +70,14 @@ ul {
     font-weight: 500;
 }
 
+
 .dark-icon {
     content: url(./assets/icon-moon.svg);
     margin-left: 1em;
     height: 23px;
     width: 23px;
 }
+
 
 .light-icon {
     content: url(./assets/icon-sun.svg);
