@@ -238,6 +238,7 @@ ul {
 }
 
 .info__stats  li span {
+    display: block;
     font-family: "Octocat Reg";
     font-size: 0.85em;
     color: #697c9a;
@@ -353,8 +354,8 @@ ul {
         padding: 0.4em 1.5em;
         font-size: 1.5em;
     }
-    .info__stats span::first-line {
-        font-size: 0.5em;
+    .info__stats  li span {
+        font-size: 0.6em;
     }
     /* User location */
     .info__location {
