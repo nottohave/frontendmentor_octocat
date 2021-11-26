@@ -20,7 +20,7 @@ var infoTitleH2 = document.querySelector(".info__title");
 var formgroup = document.querySelector(".form-group");
 var inputBox = document.querySelector(".form-control");
 var searchButton = document.querySelector(".form-group__searchBtn");
-var searchStatusLabel = document.querySelector(".search-status-label");
+var searchStatus = document.querySelector(".search-status");
 
 // hide octocat-picture when searching for a user
 var octocat_picture_deskMode = document.querySelector(".octocat-picture");
@@ -65,7 +65,7 @@ form.addEventListener("submit", function(e){
         // else, return no results
         if (data.login && data.avatar_url !== undefined) {
             // remove label, reset search box, input box, button style
-            searchStatusLabel.setAttribute("style", "display: none");
+            searchStatus.setAttribute("style", "display: none");
             formgroup.setAttribute("style", 
             "grid-template-columns: 0.2fr 1.5fr 0.5fr");
             inputBox.removeAttribute("style", "width");
@@ -162,7 +162,7 @@ form.addEventListener("submit", function(e){
             // display the label No Results
             // under the dark mode condition, the search form should keep dark background
             if (titleTheme.innerHTML === "LIGHT") {
-                searchStatusLabel.setAttribute("style", "display: unset; ");
+                searchStatus.setAttribute("style", "display: unset; ");
                 formgroup.style.background = "#1E2A47";
                 formgroup.style.boxShadow = "none";
                 inputBox.setAttribute("style", "opacity: 1");
@@ -230,7 +230,7 @@ function switchThemeColorFunc() {
         // search box
         formgroup.removeAttribute("style", "background");
         formgroup.removeAttribute("style", "box-shadow");
-        if (searchStatusLabel.style.display === "unset") {
+        if (searchStatus.style.display === "unset") {
             formgroup.setAttribute("style", "grid-template-columns: 0.2fr 1.5fr 0.5fr 0.5fr")
         }
 

@@ -119,7 +119,7 @@ ul {
 }
 
 
-.search-status-label {
+.search-status {
     display: none;
     width: 7em;
     grid-column-start: 3; 
