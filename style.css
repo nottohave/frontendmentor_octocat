@@ -108,6 +108,11 @@ ul {
     box-shadow: 0px 5px 15px hsl(217, 20%, 81%);
 }
 
+.form-group.dark {
+    background: var(--darkThemeBackground);
+    box-shadow: none;
+}
+
 /* input placeholder */
 .form-control {
     padding-left: 10px;
