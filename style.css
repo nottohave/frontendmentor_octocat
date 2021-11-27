@@ -255,13 +255,19 @@ ul {
     display: flex;
 }
 
-.info__user p {
+
+.info__userP {
     font-family: "Octocat Reg";
     font-size: 0.9em;
     line-height: 1.8em;
     padding: 2.125em 0em;
     color: #697c9a;
 }
+
+.info__userP.dark {
+    color: var(--darkThemeText);
+}
+
 
 /* USER STATS */
 .info__stats {

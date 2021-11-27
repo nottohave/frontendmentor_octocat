@@ -29,7 +29,7 @@ var searchStatus = document.querySelector(".search-status");
 var octocat_picture_deskMode = document.querySelector(".octocat-picture");
 
 // user paragraph
-var infoUser = document.querySelector(".info__user");
+var infoUserP = document.querySelector(".info__userP");
 
 // user stats
 var infoStats = document.querySelector(".info__stats");
@@ -100,19 +100,15 @@ form.addEventListener("submit", function(e){
             }
 
             // add user header information to title
-            // infoTitle.innerHTML = 
-            // `<h2>${data.name}</h2>` +
-            // `<a href="#">@${(data.login).toLowerCase()}</a>` +
-            // `<p>Joined  `  + dt + `</p>`;
             infoTitleh2.innerHTML = `${data.name}`;
             infoTitleA.innerHTML = `${(data.login).toLowerCase()}`;
             infoTitleP.innerHTML = `Joined ` + dt + `</p>`;
             
             // User information description
             if (data.bio === null) {
-                infoUser.innerHTML = `<p>This profile has no bio</p>`
+                infoUserP.innerHTML = "This profile has no bio";
             } else {
-                infoUser.innerHTML = `<p>${data.bio}</p>`
+                infoUserP.innerHTML = `${data.bio}`;
             }
 
             // User repos, followers & following statistic
@@ -197,5 +193,5 @@ function switchThemeColorFunc() {
     // user body title The Octocat
     infoTitleh2.classList.toggle("dark");
     infoTitleP.classList.toggle("dark");
-
+    infoUserP.classList.toggle("dark");
 }
