@@ -19,6 +19,7 @@
 :root {
     --darkThemeText: #FFFFFF;
     --darkThemeBackground: #1E2A47;
+    --darkThemeBody: #141D2F;
 }
 
 body {
@@ -26,7 +27,7 @@ body {
 }
 
 body.dark {
-    background: var(--darkThemeBackground);
+    background: var(--darkThemeBody);
 }
 
 /* Mobile view 375 x 777 */
@@ -165,12 +166,22 @@ ul {
     opacity: 0.5;
 }
 
+.form-group__searchBtn.dark:hover {
+    opacity: 1;
+    background: #60ABFF;
+}
+
 .info__container {
     margin: 1em;
     padding: 2em 1em;
     border-radius: 1em;
     background: #FEFEFE;
     box-shadow: 0px 5px 15px hsl(217, 20%, 81%);
+}
+
+.info__container.dark {
+    background: var(--darkThemeBackground);
+    box-shadow: "none";
 }
 
 .info__container__right {

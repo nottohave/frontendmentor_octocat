@@ -178,12 +178,15 @@ form.addEventListener("submit", function(e){
 
 // Enable/Disable Dark Mode for user
 function switchThemeColorFunc() {
+    // body and header
     body.classList.toggle("dark");
     titleTheme.innerHTML = "LIGHT";
     logo.classList.toggle("dark");
     titleTheme.classList.toggle("dark");
-
+    // search box
     formgroup.classList.toggle("dark");
     inputBox.classList.toggle("dark");
-    
+    // user body info
+    infoContainer.classList.toggle("dark");
+    searchButton.classList.toggle("dark");
 }
