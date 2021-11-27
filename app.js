@@ -14,7 +14,10 @@ var infoContainer = document.querySelector(".info__container");
 // user profile picture and title "The Octocat"
 var profilePicture = document.querySelector(".info__ProfilePic");
 var profileImg = document.querySelector(".profileImg");
-var infoTitleH2 = document.querySelector(".info__title");
+var infoTitle = document.querySelector(".info__title");
+var infoTitleh2 = document.querySelector(".info__titleh2");
+var infoTitleA = document.querySelector(".info__titleA");
+var infoTitleP = document.querySelector(".info__titleP");
 
 // grab search box, input box, the button & label
 var formgroup = document.querySelector(".form-group");
@@ -97,10 +100,13 @@ form.addEventListener("submit", function(e){
             }
 
             // add user header information to title
-            infoTitleH2.innerHTML = 
-            `<h2>${data.name}</h2>` +
-            `<a href="#">@${(data.login).toLowerCase()}</a>` +
-            `<p>Joined  `  + dt + `</p>`;
+            // infoTitle.innerHTML = 
+            // `<h2>${data.name}</h2>` +
+            // `<a href="#">@${(data.login).toLowerCase()}</a>` +
+            // `<p>Joined  `  + dt + `</p>`;
+            infoTitleh2.innerHTML = `${data.name}`;
+            infoTitleA.innerHTML = `${(data.login).toLowerCase()}`;
+            infoTitleP.innerHTML = `Joined ` + dt + `</p>`;
             
             // User information description
             if (data.bio === null) {
@@ -175,7 +181,6 @@ form.addEventListener("submit", function(e){
 })
 
 
-
 // Enable/Disable Dark Mode for user
 function switchThemeColorFunc() {
     // body and header
@@ -189,4 +194,8 @@ function switchThemeColorFunc() {
     // user body info
     infoContainer.classList.toggle("dark");
     searchButton.classList.toggle("dark");
+    // user body title The Octocat
+    infoTitleh2.classList.toggle("dark");
+    infoTitleP.classList.toggle("dark");
+
 }
