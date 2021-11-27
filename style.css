@@ -124,6 +124,11 @@ ul {
     background: none;
 }
 
+.form-control.dark {
+    opacity: 1;
+    color: var(--darkThemeText);
+}
+
 .form-control:hover {
     cursor: pointer;
 }

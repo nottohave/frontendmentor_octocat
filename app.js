@@ -184,5 +184,6 @@ function switchThemeColorFunc() {
     titleTheme.classList.toggle("dark");
 
     formgroup.classList.toggle("dark");
-
+    inputBox.classList.toggle("dark");
+    
 }
