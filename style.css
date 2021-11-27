@@ -18,11 +18,15 @@
 /* light mode color */
 :root {
     --darkThemeText: #FFFFFF;
-    --darkThemeInputBox: #1E2A47;
+    --darkThemeBackground: #1E2A47;
 }
 
 body {
     background: #f6f8ff;
+}
+
+body.dark {
+    background: var(--darkThemeBackground);
 }
 
 /* Mobile view 375 x 777 */
@@ -41,6 +45,10 @@ header {
     line-height: 38px;
     color: #2B3442;
     font-weight: 500;
+}
+
+.logo.dark {
+    color: var(--darkThemeText);
 }
 
 ul {
