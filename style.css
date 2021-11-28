@@ -181,7 +181,7 @@ ul {
 
 .info__container.dark {
     background: var(--darkThemeBackground);
-    box-shadow: "none";
+    box-shadow: none;
 }
 
 .info__container__right {
@@ -288,14 +288,14 @@ ul {
     color: var(--darkThemeText);
 }
 
-.span {
+.userStats {
     display: block;
     font-family: "Octocat Reg";
     font-size: 0.85em;
-    color: #697c9a;
+    color: #697c9a !important;
 }
 
-.span.dark {
+.userStats.dark {
     color: var(--darkThemeText);
 }
 

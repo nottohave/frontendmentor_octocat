@@ -33,7 +33,7 @@ var infoUserP = document.querySelector(".info__userP");
 
 // user stats
 var infoStats = document.querySelector(".info__stats");
-var infoStatsSpan = document.querySelector(".span")
+const userStats = document.querySelector("#userStats");
 
 // user box of location, web link, twitter, company
 // ^img
@@ -197,5 +197,5 @@ function switchThemeColorFunc() {
     infoUserP.classList.toggle("dark");
     // user stats
     infoStats.classList.toggle("dark");
-    infoStatsSpan.classList.toggle("dark");
+    userStats.classList.toggle("dark");
 }
