@@ -33,6 +33,7 @@ var infoUserP = document.querySelector(".info__userP");
 
 // user stats
 var infoStats = document.querySelector(".info__stats");
+var infoStatsSpan = document.querySelector(".span")
 
 // user box of location, web link, twitter, company
 // ^img
@@ -190,8 +191,11 @@ function switchThemeColorFunc() {
     // user body info
     infoContainer.classList.toggle("dark");
     searchButton.classList.toggle("dark");
-    // user body title The Octocat
+    // user body title The Octocat and paragrah
     infoTitleh2.classList.toggle("dark");
     infoTitleP.classList.toggle("dark");
     infoUserP.classList.toggle("dark");
+    // user stats
+    infoStats.classList.toggle("dark");
+    infoStatsSpan.classList.toggle("dark");
 }

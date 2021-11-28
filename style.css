@@ -283,11 +283,20 @@ ul {
     color: #2B3442;
 }
 
-.info__stats  li span {
+.info__stats.dark {
+    background: var(--darkThemeBody);
+    color: var(--darkThemeText);
+}
+
+.span {
     display: block;
     font-family: "Octocat Reg";
     font-size: 0.85em;
     color: #697c9a;
+}
+
+.span.dark {
+    color: var(--darkThemeText);
 }
 
 /* USER LOCATION */
