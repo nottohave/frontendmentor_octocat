@@ -200,10 +200,10 @@ function switchThemeColorFunc() {
     userStats.classList.toggle("dark");
     // user location, blog, twitter, company
     // ^img
-    imgLocation.style.filter = "invert(25%) brightness(1000%)";
-    imgWebsite.style.filter = "invert(25%) brightness(1000%)";
-    imgTwitter.style.filter = "invert(25%) brightness(1000%)";
-    imgCompany.style.filter = "invert(25%) brightness(1000%)";
+    imgLocation.classList.toggle("dark");
+    imgWebsite.classList.toggle("dark");
+    imgTwitter.classList.toggle("dark");
+    imgCompany.classList.toggle("dark");
     // ^text
     userLocation.style.color = "#FFFFFF";
     if (webLiTxt.children[0] !== undefined) {

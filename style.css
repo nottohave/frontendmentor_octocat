@@ -329,6 +329,14 @@ ul {
     padding-right: 1.12em;
 }
 
+.img-location.dark,
+.img-website.dark,
+.img-twitter.dark,
+.img-company.dark {
+    filter: invert(25%) brightness(1000%);
+}
+
+
 .location img {
     padding-right: 1.43em !important;
 }
