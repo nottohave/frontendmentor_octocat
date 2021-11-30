@@ -33,7 +33,7 @@ var infoUserP = document.querySelector(".info__userP");
 
 // user stats
 var infoStats = document.querySelector(".info__stats");
-const userStats = document.querySelector("#userStats");
+var userStats = document.querySelector("#userStats");
 
 // user box of location, web link, twitter, company
 // ^img
@@ -195,7 +195,22 @@ function switchThemeColorFunc() {
     infoTitleh2.classList.toggle("dark");
     infoTitleP.classList.toggle("dark");
     infoUserP.classList.toggle("dark");
-    // user stats
+    // user stats - 
     infoStats.classList.toggle("dark");
     userStats.classList.toggle("dark");
+    // user location, blog, twitter, company
+    // ^img
+    imgLocation.style.filter = "invert(25%) brightness(1000%)";
+    imgWebsite.style.filter = "invert(25%) brightness(1000%)";
+    imgTwitter.style.filter = "invert(25%) brightness(1000%)";
+    imgCompany.style.filter = "invert(25%) brightness(1000%)";
+    // ^text
+    userLocation.style.color = "#FFFFFF";
+    if (webLiTxt.children[0] !== undefined) {
+        webLiTxt.children[0].style.color = "#FFFFFF";
+    } else {
+        webLiTxt.style.color = "#FFFFFF";
+    }
+    twitter.style.color = "#FFFFFF";
+    company.style.color = "#FFFFFF";
 }
