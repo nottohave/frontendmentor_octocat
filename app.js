@@ -172,7 +172,7 @@ form.addEventListener("submit", function(e){
                 inputBox.setAttribute("style", "opacity: 1");
                 inputBox.setAttribute("style", "color: #FFFFFF");        
             } else {
-                searchStatusLabel.setAttribute("style", "display: unset; ");
+                searchStatus.setAttribute("style", "display: unset;");
             }
         }
     })
@@ -185,6 +185,7 @@ function switchThemeColorFunc() {
     body.classList.toggle("dark");
     if (titleTheme.innerHTML === "DARK") {
         titleTheme.innerHTML = "LIGHT";
+        titleTheme.style.color = "#FFFFFF";
         icon.setAttribute("style", "content: url(./assets/icon-sun.svg)");
         if (webLiTxt.children[0] !== undefined) {
             webLiTxt.children[0].style.color = "#FFFFFF";
@@ -193,6 +194,7 @@ function switchThemeColorFunc() {
         }    
     } else {
         titleTheme.innerHTML = "DARK";
+        titleTheme.removeAttribute("style", "color");
         icon.setAttribute("style", "content: url(./assets/icon-moon.svg)");
         if (webLiTxt.children[0] !== undefined) {
             webLiTxt.children[0].removeAttribute("style", "color");
@@ -228,5 +230,4 @@ function switchThemeColorFunc() {
     webLiTxtA.classList.toggle("dark");
     twitter.classList.toggle("dark");
     company.classList.toggle("dark");
-
 }
