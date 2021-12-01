@@ -50,6 +50,7 @@ var company = document.querySelector(".company");
 // user text of location, website link, twitter, company
 var userLoTxt = document.querySelector(".location-name");
 var webLiTxt = document.querySelector(".website-name");
+var webLiTxtA = document.querySelector(".website-nameA");
 var twitTxt = document.querySelector(".twitter-link");
 var compTxt = document.querySelector(".company-name");
 
@@ -102,7 +103,7 @@ form.addEventListener("submit", function(e){
 
             // add user header information to title
             infoTitleh2.innerHTML = `${data.name}`;
-            infoTitleA.innerHTML = `${(data.login).toLowerCase()}`;
+            infoTitleA.innerHTML = `@${(data.login).toLowerCase()}`;
             infoTitleP.innerHTML = `Joined ` + dt + `</p>`;
             
             // User information description
@@ -182,7 +183,24 @@ form.addEventListener("submit", function(e){
 function switchThemeColorFunc() {
     // body and header
     body.classList.toggle("dark");
-    titleTheme.innerHTML = "LIGHT";
+    if (titleTheme.innerHTML === "DARK") {
+        titleTheme.innerHTML = "LIGHT";
+        icon.setAttribute("style", "content: url(./assets/icon-sun.svg)");
+        if (webLiTxt.children[0] !== undefined) {
+            webLiTxt.children[0].style.color = "#FFFFFF";
+        } else {
+            webLiTxt.style.color = "#FFFFFF";
+        }    
+    } else {
+        titleTheme.innerHTML = "DARK";
+        icon.setAttribute("style", "content: url(./assets/icon-moon.svg)");
+        if (webLiTxt.children[0] !== undefined) {
+            webLiTxt.children[0].removeAttribute("style", "color");
+        } else {
+            webLiTxt.removeAttribute("style", "color");
+        }
+    }
+
     logo.classList.toggle("dark");
     titleTheme.classList.toggle("dark");
     // search box
@@ -205,12 +223,10 @@ function switchThemeColorFunc() {
     imgTwitter.classList.toggle("dark");
     imgCompany.classList.toggle("dark");
     // ^text
-    userLocation.style.color = "#FFFFFF";
-    if (webLiTxt.children[0] !== undefined) {
-        webLiTxt.children[0].style.color = "#FFFFFF";
-    } else {
-        webLiTxt.style.color = "#FFFFFF";
-    }
-    twitter.style.color = "#FFFFFF";
-    company.style.color = "#FFFFFF";
+    // userLocation.style.color = "#FFFFFF";
+    userLocation.classList.toggle("dark");
+    webLiTxtA.classList.toggle("dark");
+    twitter.classList.toggle("dark");
+    company.classList.toggle("dark");
+
 }
