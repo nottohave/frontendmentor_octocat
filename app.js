@@ -134,7 +134,7 @@ form.addEventListener("submit", function(e){
                 webLiTxt.innerHTML = `Not Available`;
                 webLink.setAttribute("style", "opacity: 0.5");
             } else {
-                webLiTxt.innerHTML = `<a href="${data.blog}">${data.blog}</a>`;
+                webLiTxt.innerHTML = `<a class="website-nameA" href="${data.blog}">${data.blog}</a>`;
                 webLink.removeAttribute("style", "opacity");
             };
             
