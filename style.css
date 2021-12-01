@@ -322,6 +322,13 @@ ul {
     color: #2B3442;
 }
 
+.location.dark,
+.website.dark,
+.twitter.dark,
+.company.dark {
+    color: var(--darkThemeText);
+}
+
 .img-location,
 .img-website,
 .img-twitter,
@@ -341,15 +348,16 @@ ul {
     padding-right: 1.43em !important;
 }
 
-.website-name a {
+.website-nameA {
     text-decoration: none;
     color: #2B3442;
 }
 
-.website-name a:hover {
+.website-nameA:hover {
     text-decoration: underline;
     cursor: pointer;
 }
+
 
 .twitter {
     opacity: 0.5;
