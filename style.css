@@ -288,14 +288,18 @@ ul {
     color: var(--darkThemeText);
 }
 
-.userStats {
+.userStats__Repo,
+.userStats__Followers,
+.userStats__Following {
     display: block;
     font-family: "Octocat Reg";
     font-size: 0.85em;
-    color: #697c9a !important;
+    color: #697c9a;
 }
 
-.userStats.dark {
+.userStats__Repo.dark,
+.userStats__Followers.dark,
+.userStats__Following.dark {
     color: var(--darkThemeText);
 }
 
