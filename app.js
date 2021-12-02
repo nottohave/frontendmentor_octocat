@@ -123,10 +123,14 @@ form.addEventListener("submit", function(e){
             }
 
             // User repos, followers & following statistic
-            infoStats.innerHTML = 
-            `<li><span>Repos </span>${data.public_repos}</li>` +
-            `<li><span>Followers </span>${data.followers}</li>` +
-            `<li><span>Following </span>${data.following}</li>`;
+            // infoStats.innerHTML = 
+            // `<li> ${userStatsRepo.innerHTML} ${data.public_repos}</li>`;
+            // `<li><span>Followers </span>${data.followers}</li>` +
+            // `<li><span>Following </span>${data.following}</li>`;
+            // userStatsRepo.innerHTML = `${data.public_repos}`;
+            // userStatsFollowers.innerHTML = `${data.followers}`;
+            // userStatsFollowing.innerHTML = `${data.following}`;
+            console.log(document.getElementsByTagName("li")[0].innerHTML = `${userStatsRepo.innerHTML}` + `${data.public_repos}`);
 
             // user location, website link, twitter, company
             // if the information is null or "", display NA, grey out the area
