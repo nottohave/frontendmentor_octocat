@@ -64,7 +64,14 @@ form.addEventListener("submit", function(e){
     var originalName = search.split(" ").join("");
 
     fetch("https://api.github.com/users/" + originalName)
-    .then((result) => result.json())
+    // handle error
+    .then(response => {
+        if (!response.ok) {
+            handleErrors(response);
+            throw Error(response.statusText)
+        }
+        return response.json()
+    })
     .then((data) => {
         // return result when api found the user
         // else, return no results
@@ -153,31 +160,37 @@ form.addEventListener("submit", function(e){
                 compTxt.innerHTML = `${data.company}`;
                 company.removeAttribute("style", "opacity");
             };
-        // No Result condition:
-        } else {
-            // grab the form-group
-            formgroup.removeAttribute("style", "grid-template-columns");
-            // set the grid style to 0.5fr
-            formgroup.setAttribute("style", "grid-template-columns: 0.2fr 1.5fr 0.5fr 0.5fr");
-            // set width for input box to 10em
-            inputBox.setAttribute("style", "width: 10em");
-            // set the search button start column 4 -5
-            searchButton.setAttribute("style", "grid-column-start: 4, grid-column-end: 5");
-            // display the label No Results
-            // under the dark mode condition, the search form should keep dark background
-            if (titleTheme.innerHTML === "LIGHT") {
-                searchStatus.setAttribute("style", "display: unset; ");
-                formgroup.style.background = "#1E2A47";
-                formgroup.style.boxShadow = "none";
-                inputBox.setAttribute("style", "opacity: 1");
-                inputBox.setAttribute("style", "color: #FFFFFF");        
-            } else {
-                searchStatus.setAttribute("style", "display: unset;");
-            }
-        }
+        } 
+
     })
+    .catch((error) => {console.log(error)}) // display error
+
 })
 
+// No Result condition:
+function handleErrors(response) {
+    if (!response.ok) {
+        // grab the form-group
+        formgroup.removeAttribute("style", "grid-template-columns");
+        // set the grid style to 0.5fr
+        formgroup.setAttribute("style", "grid-template-columns: 0.2fr 1.5fr 0.5fr 0.5fr");
+        // set width for input box to 10em
+        inputBox.setAttribute("style", "width: 10em");
+        // set the search button start column 4 -5
+        searchButton.setAttribute("style", "grid-column-start: 4, grid-column-end: 5");
+        // display the label No Results
+        // under the dark mode condition, the search form should keep dark background
+        if (titleTheme.innerHTML === "LIGHT") {
+            searchStatus.setAttribute("style", "display: unset; ");
+            formgroup.style.background = "#1E2A47";
+            formgroup.style.boxShadow = "none";
+            inputBox.setAttribute("style", "opacity: 1");
+            inputBox.setAttribute("style", "color: #FFFFFF");        
+        } else {
+            searchStatus.setAttribute("style", "display: unset;");
+        }
+    }
+}
 
 // Enable/Disable Dark Mode for user
 function switchThemeColorFunc() {
