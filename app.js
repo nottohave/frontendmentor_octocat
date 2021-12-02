@@ -33,7 +33,9 @@ var infoUserP = document.querySelector(".info__userP");
 
 // user stats
 var infoStats = document.querySelector(".info__stats");
-var userStats = document.querySelector("#userStats");
+var userStatsRepo = document.querySelector(".userStats__Repo");
+var userStatsFollowers = document.querySelector(".userStats__Followers");
+var userStatsFollowing = document.querySelector(".userStats__Following");
 
 // user box of location, web link, twitter, company
 // ^img
@@ -231,7 +233,9 @@ function switchThemeColorFunc() {
     infoUserP.classList.toggle("dark");
     // user stats - 
     infoStats.classList.toggle("dark");
-    userStats.classList.toggle("dark");
+    userStatsRepo.classList.toggle("dark");
+    userStatsFollowers.classList.toggle("dark");
+    userStatsFollowing.classList.toggle("dark");
     // user location, blog, twitter, company
     // ^img
     imgLocation.classList.toggle("dark");
