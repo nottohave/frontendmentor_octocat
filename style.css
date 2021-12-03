@@ -373,10 +373,9 @@ ul {
     cursor: pointer;
 }
 
-
-.twitter {
+/* .twitter {
     opacity: 0.5;
-}
+} */
 
 /* Tablet size 768 x 1024 */
 @media screen and (min-width: 768px) {
