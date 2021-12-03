@@ -127,9 +127,6 @@ form.addEventListener("submit", function(e){
 
             // User repos, followers & following statistic
             // infoStats.innerHTML = 
-            // `<li> ${userStatsRepo.innerHTML} ${data.public_repos}</li>`;
-            // `<li><span>Followers </span>${data.followers}</li>` +
-            // `<li><span>Following </span>${data.following}</li>`;
             repoNum.innerHTML = `${data.public_repos}`;
             folwerNum.innerHTML = `${data.followers}`;
             folwingNum.innerHTML = `${data.following}`;
@@ -148,18 +145,20 @@ form.addEventListener("submit", function(e){
             if (data.blog == "") {
                 webLiTxt.innerHTML = `Not Available`;
                 webLink.setAttribute("style", "opacity: 0.5");
+                webLiTxt.setAttribute("style", "color: white");
             } else {
                 webLiTxtA.href = `${data.blog}`;
                 webLiTxtA.innerHTML = `${data.blog}`;
                 webLink.removeAttribute("style", "opacity");
+                webLiTxt.removeAttribute("style", "opacity");
             };
             
             if (data.twitter_username == null) {
                 twitTxt.innerHTML = `Not Available`;
-                twitter.removeAttribute("style", "opacity")
+                twitter.setAttribute("style", "opacity: 0.5")
             } else {
                 twitTxt.innerHTML = `${data.twitter_username}`;
-                twitter.setAttribute("style", "opacity: 1 !important");
+                twitter.removeAttribute("style", "opacity");
             };
 
             if (data.company == null) {
