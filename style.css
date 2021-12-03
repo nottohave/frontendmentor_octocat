@@ -358,7 +358,6 @@ ul {
     filter: invert(25%) brightness(1000%);
 }
 
-
 .location img {
     padding-right: 1.43em !important;
 }
@@ -373,9 +372,6 @@ ul {
     cursor: pointer;
 }
 
-/* .twitter {
-    opacity: 0.5;
-} */
 
 /* Tablet size 768 x 1024 */
 @media screen and (min-width: 768px) {
@@ -439,10 +435,13 @@ ul {
         padding: 0.4em 1.5em;
         font-size: 1.5em;
     }
-    .info__stats  li span {
+
+    .userStats__Repo,
+    .userStats__Followers,
+    .userStats__Following {
         font-size: 0.6em;
     }
-    /* User location */
+        /* User location */
     .info__location {
         display: flex;
         flex-direction: column;
