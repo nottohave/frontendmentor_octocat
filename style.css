@@ -278,14 +278,10 @@ ul {
     padding: 1em 2em;
     text-align: center;
     line-height: 2em;
-    font-family: "Octocat Bold";
-    font-size: 1em;
-    color: #2B3442;
 }
 
 .info__stats.dark {
     background: var(--darkThemeBody);
-    color: var(--darkThemeText);
 }
 
 .userStats__Repo,
@@ -297,9 +293,24 @@ ul {
     color: #697c9a;
 }
 
+.repoNum,
+.folwerNum,
+.folwingNum {
+    display: block;
+    font-family: "Octocat Bold";
+    font-size: 1em;
+    color: #2B3442;
+}
+
 .userStats__Repo.dark,
 .userStats__Followers.dark,
 .userStats__Following.dark {
+    color: var(--darkThemeText);
+}
+
+.repoNum.dark,
+.folwerNum.dark,
+.folwingNum.dark {
     color: var(--darkThemeText);
 }
 
