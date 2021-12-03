@@ -36,6 +36,9 @@ var infoStats = document.querySelector(".info__stats");
 var userStatsRepo = document.querySelector(".userStats__Repo");
 var userStatsFollowers = document.querySelector(".userStats__Followers");
 var userStatsFollowing = document.querySelector(".userStats__Following");
+var repoNum = document.querySelector(".repoNum");
+var folwerNum = document.querySelector(".folwerNum");
+var folwingNum = document.querySelector(".folwingNum");
 
 // user box of location, web link, twitter, company
 // ^img
@@ -127,10 +130,9 @@ form.addEventListener("submit", function(e){
             // `<li> ${userStatsRepo.innerHTML} ${data.public_repos}</li>`;
             // `<li><span>Followers </span>${data.followers}</li>` +
             // `<li><span>Following </span>${data.following}</li>`;
-            // userStatsRepo.innerHTML = `${data.public_repos}`;
-            // userStatsFollowers.innerHTML = `${data.followers}`;
-            // userStatsFollowing.innerHTML = `${data.following}`;
-            console.log(document.getElementsByTagName("li")[0].innerHTML = `${userStatsRepo.innerHTML}` + `${data.public_repos}`);
+            repoNum.innerHTML = `${data.public_repos}`;
+            folwerNum.innerHTML = `${data.followers}`;
+            folwingNum.innerHTML = `${data.following}`;
 
             // user location, website link, twitter, company
             // if the information is null or "", display NA, grey out the area
@@ -240,6 +242,9 @@ function switchThemeColorFunc() {
     userStatsRepo.classList.toggle("dark");
     userStatsFollowers.classList.toggle("dark");
     userStatsFollowing.classList.toggle("dark");
+    repoNum.classList.toggle("dark");
+    folwerNum.classList.toggle("dark");
+    folwingNum.classList.toggle("dark");
     // user location, blog, twitter, company
     // ^img
     imgLocation.classList.toggle("dark");
